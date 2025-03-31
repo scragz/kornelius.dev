@@ -1,0 +1,37 @@
+/* FeaturesOverview specific styles */
+
+.featureCard {
+  border: 3px solid var(--keyword-color, #ff7b72); /* Solid, different color border */
+  background-color: rgba(50, 50, 50, 0.7); /* Slightly different background */
+  backdrop-filter: blur(1px);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease; /* Add bounce */
+  border-radius: 4px; /* Sharper radius */
+}
+
+.featureCard:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 10px var(--keyword-color, #ff7b72); /* Different shadow/glow */
+}
+
+.featureTitle {
+  font-family: 'Anton', sans-serif; /* Match h2 style */
+  color: var(--keyword-color, #ff7b72);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featureDescription {
+  color: var(--string-color, #a5d6ff);
+  opacity: 0.9;
+}
+
+/* Styles for Legitimacy section cards */
+.legitimacyCard {
+  border: 1px solid var(--comment-color, #8b949e);
+  background-color: rgba(30, 30, 30, 0.6);
+  transition: background-color 0.2s ease;
+}
+
+.legitimacyCard:hover {
+  background-color: rgba(50, 50, 50, 0.8);
+}

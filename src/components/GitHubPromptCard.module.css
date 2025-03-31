@@ -1,0 +1,88 @@
+/* GitHubPromptCard specific styles */
+
+.card {
+  /* Base card styles */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  border: 2px dashed var(--comment-color, #8b949e); /* Use CSS var with fallback */
+  background-color: rgba(40, 40, 40, 0.8); /* Darker semi-transparent */
+  backdrop-filter: blur(2px); /* Frosted glass effect */
+  overflow: hidden; /* Ensure pseudo-elements don't overflow */
+  position: relative; /* Needed for pseudo-elements */
+}
+
+/* Add a glitchy/scanline overlay effect */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 4px 100%;
+  z-index: 1;
+  pointer-events: none; /* Allow clicks through the overlay */
+  animation: scanlines 10s linear infinite alternate;
+}
+
+@keyframes scanlines {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+
+.card:hover {
+  transform: translateY(-5px) rotate(-1.5deg) scale(1.02); /* Tilt, lift, and scale on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 20px var(--function-color, #d2a8ff); /* Shadow + Glow */
+}
+
+.contentGroup {
+  position: relative; /* Ensure content is above pseudo-elements */
+  z-index: 2;
+}
+
+
+.titleLink {
+  /* Style for the title link */
+  color: var(--type-color, #79c0ff); /* Use CSS var with fallback */
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  font-family: 'Anton', sans-serif; /* Use a heading font */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block; /* Needed for transform */
+  transform: skewX(-3deg);
+}
+
+.titleLink:hover {
+  color: var(--keyword-color, #ff7b72); /* Change color on hover */
+  text-shadow: 0 0 5px var(--keyword-color, #ff7b72);
+  text-decoration: none; /* Remove underline */
+}
+
+.copyIcon {
+  /* Style for the copy icon ActionIcon */
+  color: var(--comment-color, #8b949e);
+  transition: transform 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent; /* Add border for hover effect */
+}
+
+.copyIcon:hover {
+  transform: scale(1.3) rotate(10deg);
+  color: var(--type-color, #79c0ff);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--type-color, #79c0ff);
+  border-radius: 4px;
+}
+
+.description {
+  font-family: 'Courier New', Courier, monospace; /* Different font for description */
+  font-size: 0.85rem;
+  color: var(--string-color, #a5d6ff);
+  opacity: 0.8;
+  margin-top: 10px; /* Adjust spacing */
+  position: relative; /* Ensure content is above pseudo-elements */
+  z-index: 2;
+}
+
+/* Add more specific styles as needed */
