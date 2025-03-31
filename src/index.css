@@ -106,8 +106,8 @@ button:focus-visible {
 
 /* Typography with myspace/nu-metal style */
 h1 {
-  font-family: 'Bungee', sans-serif;
-  font-size: 2em;
+  --mantine-font-family-headings: 'Bungee', sans-serif;
+  --mantine-h1-font-size: 5rem;
   font-weight: bold;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -125,7 +125,7 @@ h1 {
 }
 
 h1::after {
-  content: "Kornelius"; /* Consider making this dynamic if needed */
+  content: "Kornelius";
   position: absolute;
   left: 3px;
   top: 3px;
@@ -136,8 +136,8 @@ h1::after {
 }
 
 h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 1.4em;
+  --mantine-font-family-headings: 'Anton', sans-serif;
+  --mantine-h2-font-size: 3.4em;
   font-weight: bold;
   margin: 15px 0 10px;
   text-transform: uppercase;
@@ -154,8 +154,8 @@ h2 {
 }
 
 h3 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 1.2em;
+  --mantine-font-family-headings: 'Permanent Marker', cursive;
+  --mantine-h3-font-size: 3.2em;
   margin: 10px 0;
   transform: rotate(-1.5deg);
   color: var(--keyword-color);
@@ -215,7 +215,7 @@ p {
 
 .placeholder {
   font-style: italic;
-  color: var(--vscode-input-placeholderForeground);
+  color: var(--type-color);
   font-family: 'Permanent Marker', cursive;
   opacity: 0.7;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);

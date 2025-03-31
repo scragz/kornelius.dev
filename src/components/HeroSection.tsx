@@ -69,8 +69,8 @@ const HeroSection: React.FC = () => {
                  filter: 'drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))',
                  animation: 'pulseGlow 4s infinite alternate ease-in-out' // Add pulsating glow animation
                }}>
-            <path d="M50 130 L150 130 L170 20 L130 20 L110 100 L90 20 L30 20 Z" fill="url(#logoGradient)" stroke="var(--keyword-color, #ff7b72)" strokeWidth="3" transform="skewX(-10) rotate(-5)" />
-            <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle" fontFamily="Bungee, sans-serif" fontSize="40" fill="var(--type-color, #79c0ff)" transform="rotate(-5 100 75)">K!</text>
+            <path d="M30 20 H 170 V 130 H 30 Z" fill="url(#logoGradient)" stroke="var(--keyword-color, #ff7b72)" strokeWidth="3" transform="skewX(-5) rotate(-3)" />
+            <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontFamily="Bungee, sans-serif" fontSize="60" fill="var(--type-color, #79c0ff)" transform="rotate(-5 100 75)">K!</text>
             <defs>
               <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style={{ stopColor: 'var(--function-color, #d2a8ff)', stopOpacity: 1 }} />
