@@ -1,0 +1,5 @@
+name = "kornelius-site"
+compatibility_date = "2025-03-31"
+
+[assets]
+directory = "./dist"
