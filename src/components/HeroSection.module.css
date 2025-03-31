@@ -1,0 +1,51 @@
+.heroBox {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  /* Animated Background - Note: Mantine variables used directly */
+  background: radial-gradient(ellipse at center, rgba(var(--mantine-color-dark-6-rgb) / 0.8), rgba(var(--mantine-color-dark-9-rgb) / 0.9)),
+              linear-gradient(-45deg, var(--keyword-color, #ff7b72), var(--function-color, #d2a8ff), var(--type-color, #79c0ff), var(--string-color, #a5d6ff));
+  background-size: 200% 200%, 400% 400%;
+  animation: backgroundShift 15s ease infinite; /* Assumes backgroundShift is defined globally */
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  animation-name: fadeIn; /* Assumes fadeIn is defined globally */
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.heroLogoSvg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  animation: pulseGlow 4s infinite alternate ease-in-out; /* Assumes pulseGlow is defined globally */
+}
+
+.heroTitle {
+  max-width: 100%;
+}
+
+.heroTagline {
+  max-width: 100%;
+  white-space: normal; /* Ensure text wraps */
+}
+
+.scrollButton {
+  margin-top: 2rem;
+  border-color: var(--comment-color, #8b949e);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; /* Add transitions */
+}
+
+.scrollButton:hover {
+  transform: scale(1.1);
+  border-color: var(--type-color, #79c0ff);
+  box-shadow: 0 0 15px var(--type-color, #79c0ff);
+}

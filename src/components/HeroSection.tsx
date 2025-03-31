@@ -17,6 +17,7 @@
 import { Container, Title, Text, Box, Button, Stack } from '@mantine/core';
 import React from 'react';
 import { IconArrowDown } from '@tabler/icons-react';
+import classes from './HeroSection.module.css';
 
 const HeroSection: React.FC = () => {
 
@@ -29,46 +30,10 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <Box
-      // Animated gradient background + basic structure
-      style={{
-        minHeight: '100vh', // Make hero take full viewport height
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        paddingTop: '5vh', // Add some padding top/bottom
-        paddingBottom: '5vh',
-        // Animated Background
-        background: `radial-gradient(ellipse at center, rgba(var(--mantine-color-dark-6 / 0.8)), rgba(var(--mantine-color-dark-9 / 0.9))),
-                     linear-gradient(-45deg, var(--keyword-color, #ff7b72), var(--function-color, #d2a8ff), var(--type-color, #79c0ff), var(--string-color, #a5d6ff))`,
-        backgroundSize: '200% 200%, 400% 400%',
-        animation: 'backgroundShift 15s ease infinite',
-      }}
-    >
-      {/* Apply fade-in animation to the content container */}
-      <Container
-        size="md"
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          textAlign: 'center',
-          animationName: 'fadeIn',
-          animationDuration: '1s',
-          animationTimingFunction: 'ease-out',
-          animationFillMode: 'forwards',
-        }}
-      >
-        <Stack align="center" gap="xl"> {/* Use Stack for vertical layout */}
-
-          {/* Larger, Animated SVG Logo Placeholder */}
-          {/* TODO: Replace with actual logo SVG */}
-          <svg width="280" height="210" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg"
-               style={{
-                 filter: 'drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))',
-                 animation: 'pulseGlow 4s infinite alternate ease-in-out' // Add pulsating glow animation
-               }}>
+    <Box className={classes.heroBox}>
+      <Container size="md" className={classes.heroContainer}>
+        <Stack align="center" gap="xl">
+          <svg width="280" height="210" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" className={classes.heroLogoSvg}>
             <path d="M30 20 H 170 V 130 H 30 Z" fill="url(#logoGradient)" stroke="var(--keyword-color, #ff7b72)" strokeWidth="3" transform="skewX(-5) rotate(-3)" />
             <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontFamily="Bungee, sans-serif" fontSize="60" fill="var(--type-color, #79c0ff)" transform="rotate(-5 100 75)">K!</text>
             <defs>
@@ -80,12 +45,12 @@ const HeroSection: React.FC = () => {
           </svg>
 
           {/* Headline */}
-          <Title order={1}>
+          <Title order={1} className={classes.heroTitle}>
             KoЯnelius
           </Title>
 
           {/* Tagline */}
-          <Text size="xl">
+          <Text size="xl" className={classes.heroTagline}>
             Streamline AI prompt creation and context management in VS Code.
           </Text>
 
@@ -96,19 +61,7 @@ const HeroSection: React.FC = () => {
             size="lg"
             onClick={handleScrollDown}
             leftSection={<IconArrowDown size={20} />}
-            // Add cool hover effect using Mantine's styles prop or inline styles for simplicity here
-            styles={{
-              root: {
-                marginTop: '2rem',
-                borderColor: 'var(--comment-color, #8b949e)',
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease', // Add transitions
-                '&:hover': {
-                  transform: 'scale(1.1)',
-                  borderColor: 'var(--type-color, #79c0ff)',
-                  boxShadow: '0 0 15px var(--type-color, #79c0ff)',
-                },
-              },
-            }}
+            className={classes.scrollButton} // Apply CSS module class
           >
             SEE THE GOODS
           </Button>
