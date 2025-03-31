@@ -1,117 +1,119 @@
 /**
  * @description
  * Hero Section component for the Kornelius marketing site.
- * This component displays the main introductory content, including a background,
- * the brand logo, headline, and tagline, styled with a nu metal/Myspace aesthetic.
- *
- * Key features:
- * - Full-width background (image/video placeholder)
- * - Prominent display of the "Bungee" logo (placeholder)
- * - Bold headline and tagline (placeholders)
- * - Optional subtle animations (to be added later)
+ * Displays logo, headline, tagline, and a scroll-down CTA.
+ * Features animated background and fade-in content animation.
  *
  * @dependencies
- * - @mantine/core: Uses Mantine components like Container, Title, Text, Box. (Removed Image)
- * - React: Base library for component structure.
+ * - @mantine/core: Uses Container, Title, Text, Box, Button, Stack.
+ * - @tabler/icons-react: For the scroll-down arrow icon.
+ * - React: Base library.
  *
  * @notes
- * - Background image/video, logo, headline, and tagline content are placeholders
- *   and should be replaced with actual assets and copy.
- * - Styling needs to be applied (potentially via Mantine theme overrides or CSS modules)
- *   to achieve the desired nu metal/Myspace look.
- * - Added a simple fade-in animation via standard CSS.
+ * - Uses global CSS for animations (@keyframes fadeIn, @keyframes backgroundShift).
+ * - Logo is an inline SVG placeholder.
+ * - Scroll CTA targets the element with id="features-section".
  */
-// Removed keyframes import from @mantine/core
-// Removed unused Image import
-import { Container, Title, Text, Box } from '@mantine/core';
-import React from 'react'; // Explicit import might be needed depending on setup
-
-// @keyframes rule needs to be defined globally (e.g., in index.css)
-/*
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-*/
-
-// Keyframes for background animation (will be added to index.css)
-/*
-@keyframes backgroundShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-*/
+import { Container, Title, Text, Box, Button, Stack } from '@mantine/core';
+import React from 'react';
+import { IconArrowDown } from '@tabler/icons-react';
 
 const HeroSection: React.FC = () => {
+
+  const handleScrollDown = () => {
+    // Target the ID of the PromptsShowcase container
+    const promptsSection = document.getElementById('prompts-section');
+    if (promptsSection) {
+      promptsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <Box
       // Animated gradient background + basic structure
       style={{
-        minHeight: '80vh', // Adjust height as needed
+        minHeight: '100vh', // Make hero take full viewport height
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'relative', // Needed for overlay/content positioning
-        overflow: 'hidden', // Prevent gradient overflow issues
-        // Animated Background: Use theme colors or CSS vars
+        position: 'relative',
+        overflow: 'hidden',
+        paddingTop: '5vh', // Add some padding top/bottom
+        paddingBottom: '5vh',
+        // Animated Background
         background: `radial-gradient(ellipse at center, rgba(var(--mantine-color-dark-6 / 0.8)), rgba(var(--mantine-color-dark-9 / 0.9))),
                      linear-gradient(-45deg, var(--keyword-color, #ff7b72), var(--function-color, #d2a8ff), var(--type-color, #79c0ff), var(--string-color, #a5d6ff))`,
-        backgroundSize: '200% 200%, 400% 400%', // Larger size for animation
-        animation: 'backgroundShift 15s ease infinite', // Reference keyframes
+        backgroundSize: '200% 200%, 400% 400%',
+        animation: 'backgroundShift 15s ease infinite',
       }}
     >
-      {/* Optional: Darker overlay for text readability */}
-      {/* <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} /> */}
-
-      {/* Apply animation to the content container */}
+      {/* Apply fade-in animation to the content container */}
       <Container
         size="md"
-        // Apply animation using standard CSS properties in the style prop
         style={{
           position: 'relative',
           zIndex: 1,
           textAlign: 'center',
-          animationName: 'fadeIn', // Reference the keyframe defined globally
+          animationName: 'fadeIn',
           animationDuration: '1s',
           animationTimingFunction: 'ease-out',
           animationFillMode: 'forwards',
         }}
       >
-        {/* Placeholder Image removed - Add logo via CSS background or SVG later */}
+        <Stack align="center" gap="xl"> {/* Use Stack for vertical layout */}
 
-        {/* Headline */}
-        <Title
-          order={1}
-          // TODO: Apply nu metal/Myspace styling (font, color, size)
-          // sx={(theme) => ({
-          //   color: theme.colors.accent[5], // Example accent color
-          //   fontSize: '3rem', // Example size
-          //   marginBottom: theme.spacing.md,
-          // })}
-        >
-          KoЯnelius {/* Using the stylized name */}
-        </Title>
+          {/* Larger, Animated SVG Logo Placeholder */}
+          {/* TODO: Replace with actual logo SVG */}
+          <svg width="280" height="210" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg"
+               style={{
+                 filter: 'drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))',
+                 animation: 'pulseGlow 4s infinite alternate ease-in-out' // Add pulsating glow animation
+               }}>
+            <path d="M50 130 L150 130 L170 20 L130 20 L110 100 L90 20 L30 20 Z" fill="url(#logoGradient)" stroke="var(--keyword-color, #ff7b72)" strokeWidth="3" transform="skewX(-10) rotate(-5)" />
+            <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle" fontFamily="Bungee, sans-serif" fontSize="40" fill="var(--type-color, #79c0ff)" transform="rotate(-5 100 75)">K!</text>
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: 'var(--function-color, #d2a8ff)', stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: 'var(--keyword-color, #ff7b72)', stopOpacity: 1 }} />
+              </linearGradient>
+            </defs>
+          </svg>
 
-        {/* TODO: Add Tagline */}
-        <Text
-          size="xl"
-          // TODO: Apply styling
-          // sx={(theme) => ({
-          //   color: theme.white, // Example color
-          //   marginBottom: theme.spacing.xl,
-          // })}
-        >
-          Streamline AI prompt creation and context management in VS Code.
-        </Text>
+          {/* Headline */}
+          <Title order={1}>
+            KoЯnelius
+          </Title>
 
-        {/* Animation is applied to the container above */}
+          {/* Tagline */}
+          <Text size="xl">
+            Streamline AI prompt creation and context management in VS Code.
+          </Text>
+
+          {/* Scroll Down CTA Button */}
+          <Button
+            variant="outline" // Different style for scroll button
+            color="gray" // TODO: Theme color
+            size="lg"
+            onClick={handleScrollDown}
+            leftSection={<IconArrowDown size={20} />}
+            // Add cool hover effect using Mantine's styles prop or inline styles for simplicity here
+            styles={{
+              root: {
+                marginTop: '2rem',
+                borderColor: 'var(--comment-color, #8b949e)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease', // Add transitions
+                '&:hover': {
+                  transform: 'scale(1.1)',
+                  borderColor: 'var(--type-color, #79c0ff)',
+                  boxShadow: '0 0 15px var(--type-color, #79c0ff)',
+                },
+              },
+            }}
+          >
+            SEE THE GOODS
+          </Button>
+
+        </Stack>
       </Container>
     </Box>
   );

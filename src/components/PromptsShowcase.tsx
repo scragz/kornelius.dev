@@ -1,35 +1,31 @@
 /**
-/**
  * @description
- * Component to showcase AI prompts for the Kornelius extension.
- * It displays multiple `GitHubPromptCard` components in a grid layout,
- * allowing users to view prompts on GitHub and copy their content.
+ * Component showcasing AI prompts for the Kornelius extension, grouped by mode.
+ * Displays `GitHubPromptCard` components in separate grids for Create, Debug, and Audit modes.
  *
  * Key features:
- * - Renders a grid of `GitHubPromptCard` cards.
- * - Links titles to GitHub view URLs.
- * - Provides copy functionality via icons fetching from raw GitHub URLs.
- * - Includes a section title.
+ * - Groups prompts by Create, Debug, Audit modes.
+ * - Renders grids of `GitHubPromptCard` cards linking to prompts.
+ * - Includes section titles for each mode.
  *
  * @dependencies
  * - @mantine/core: Uses Container, Title, SimpleGrid components.
  * - React: Base library.
- * - ./GitHubPromptCard: The component used to display prompt links and copy functionality.
+ * - ./GitHubPromptCard: Component for individual prompt links.
  *
  * @notes
- * - The prompt structure is inferred from the README features.
- * - Styling for the grid layout and title needs to be applied to match the theme.
+ * - Styling for the grid layout and titles needs to be applied to match the theme.
  */
 import React from 'react';
 import { Container, Title, SimpleGrid } from '@mantine/core';
-import GitHubPromptCard from './GitHubPromptCard'; // Import the correct component
+import GitHubPromptCard from './GitHubPromptCard'; // Import the prompt card component
 
 // Base URLs for GitHub view and raw content
 const GITHUB_VIEW_BASE_URL = 'https://github.com/scragz/kornelius/blob/main/prompts';
 const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/scragz/kornelius/main/prompts';
 
 // Data for prompts including both view and raw URLs
-const prompts = [
+const allPrompts = [
   // Create Mode
   { id: 'create-req', title: 'Create: Request', viewUrl: `${GITHUB_VIEW_BASE_URL}/create/request.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/create/request.prompt`, description: 'Define the initial request for code generation.' },
   { id: 'create-spec', title: 'Create: Spec', viewUrl: `${GITHUB_VIEW_BASE_URL}/create/spec.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/create/spec.prompt`, description: 'Generate a technical specification from a request.' },
@@ -46,24 +42,60 @@ const prompts = [
   { id: 'audit-acc', title: 'Audit: Accessibility', viewUrl: `${GITHUB_VIEW_BASE_URL}/audit/accessibility.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/audit/accessibility.prompt`, description: 'Perform an accessibility audit.' },
 ];
 
+// Filter prompts by mode based on title prefix
+const createPrompts = allPrompts.filter(p => p.title.startsWith('Create:'));
+const debugPrompts = allPrompts.filter(p => p.title.startsWith('Debug:'));
+const auditPrompts = allPrompts.filter(p => p.title.startsWith('Audit:'));
+
 
 const PromptsShowcase: React.FC = () => {
   return (
-    <Container size="lg" my="xl" /* TODO: Apply theme styling */>
-      <Title order={2} ta="center" mb="xl" /* TODO: Style title */>
-        Explore Kornelius Prompts
-      </Title>
+    // Assign ID for scrolling from Hero CTA
+    <Container id="prompts-section" size="lg" my="xl" /* TODO: Apply theme styling */>
 
-      <SimpleGrid
-        cols={{ base: 1, sm: 2, md: 3 }} // Responsive grid columns
-        spacing="lg" // Spacing between grid items
-      >
-        {prompts.map((prompt) => (
+      {/* Create Mode Section */}
+      <Title order={2} ta="center" mb="lg" /* TODO: Style title */>
+        Create Mode Prompts
+      </Title>
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" mb="xl">
+        {createPrompts.map((prompt) => (
           <GitHubPromptCard
             key={prompt.id}
-            title={prompt.title}
-            viewUrl={prompt.viewUrl} // Pass viewUrl
-            rawUrl={prompt.rawUrl}   // Pass rawUrl
+            title={prompt.title.replace('Create: ', '')} // Remove prefix for display
+            viewUrl={prompt.viewUrl}
+            rawUrl={prompt.rawUrl}
+            description={prompt.description}
+          />
+        ))}
+      </SimpleGrid>
+
+      {/* Debug Mode Section */}
+      <Title order={2} ta="center" mb="lg" mt="xl" /* TODO: Style title */>
+        Debug Mode Prompts
+      </Title>
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" mb="xl">
+        {debugPrompts.map((prompt) => (
+          <GitHubPromptCard
+            key={prompt.id}
+            title={prompt.title.replace('Debug: ', '')} // Remove prefix
+            viewUrl={prompt.viewUrl}
+            rawUrl={prompt.rawUrl}
+            description={prompt.description}
+          />
+        ))}
+      </SimpleGrid>
+
+      {/* Audit Mode Section */}
+      <Title order={2} ta="center" mb="lg" mt="xl" /* TODO: Style title */>
+        Audit Mode Prompts
+      </Title>
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
+        {auditPrompts.map((prompt) => (
+          <GitHubPromptCard
+            key={prompt.id}
+            title={prompt.title.replace('Audit: ', '')} // Remove prefix
+            viewUrl={prompt.viewUrl}
+            rawUrl={prompt.rawUrl}
             description={prompt.description}
           />
         ))}
