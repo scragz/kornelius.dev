@@ -20,11 +20,6 @@ import React from 'react';
 import { Container, Title, SimpleGrid } from '@mantine/core'; // Removed Image, Box
 import GitHubPromptCard from './GitHubPromptCard'; // Import the prompt card component
 import classes from './PromptsShowcase.module.css'; // Import CSS module
-import Diagram from './Diagram'; // Import the new Diagram component
-
-// Import specific workflow images
-import createWorkflow from '../assets/images/create-workflow.png';
-import debugWorkflow from '../assets/images/debug-workflow.png';
 
 // Base URLs for GitHub view and raw content
 const GITHUB_VIEW_BASE_URL = 'https://github.com/scragz/kornelius/blob/main/prompts';
@@ -63,12 +58,6 @@ const PromptsShowcase: React.FC = () => {
       <Title order={2} ta="center" mb="lg" className={classes.sectionTitle}>
         Create Mode
       </Title>
-      {/* Create Workflow Diagram */}
-      <Diagram
-        src={createWorkflow}
-        alt="Kornelius Create Mode Workflow Diagram"
-      />
-      {/* Removed Sub-title for prompts */}
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" mb="xl" className={classes.promptGrid}>
         {createPrompts.map((prompt) => (
           <GitHubPromptCard
@@ -84,11 +73,6 @@ const PromptsShowcase: React.FC = () => {
       <Title order={2} ta="center" mb="lg" mt="xl" className={classes.sectionTitle}>
         Debug Mode
       </Title>
-      {/* Debug Workflow Diagram */}
-      <Diagram
-        src={debugWorkflow}
-        alt="Kornelius Debug Mode Workflow Diagram"
-      />
       {/* Removed Sub-title for prompts */}
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" mb="xl" className={classes.promptGrid}>
         {debugPrompts.map((prompt) => (

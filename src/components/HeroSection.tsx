@@ -18,6 +18,7 @@ import { Container, Title, Text, Box, Button, Stack } from '@mantine/core';
 import React from 'react';
 import { IconArrowDown } from '@tabler/icons-react';
 import classes from './HeroSection.module.css';
+import logo from '../assets/images/barbed-wire-color.svg';
 
 const HeroSection: React.FC = () => {
 
@@ -34,7 +35,7 @@ const HeroSection: React.FC = () => {
         <Stack align="center" gap="xl">
           {/* Barbed Wire Image */}
           <img
-            src="/barbed-wire-color.svg"
+            src={logo}
             alt="Barbed Wire Logo"
             className={classes.barbedWireLogo}
           />
