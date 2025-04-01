@@ -52,12 +52,23 @@
   animation: none; /* Override flicker animation if inherited */
 }
 
+.subSectionTitle {
+  /* Style for titles like "Create Mode Prompts" */
+  font-family: 'Permanent Marker', cursive; /* Use a different font */
+  font-size: 1.6rem;
+  color: var(--string-color, #a5d6ff);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+  transform: rotate(0.5deg);
+  margin-bottom: 1.5rem !important;
+  border-bottom: 1px dashed var(--comment-color, #8b949e);
+  display: inline-block; /* Allow border to fit content */
+  padding-bottom: 3px;
+}
+
 .promptGrid {
-  /* Style the grid container if needed */
-  /* Example: Add a subtle background pattern */
-  background-image: radial-gradient(var(--comment-color, #8b949e) 1px, transparent 1px);
-  background-size: 10px 10px;
-  background-color: rgba(0,0,0,0.1);
-  padding: 1rem;
-  border: 1px dashed var(--comment-color, #8b949e);
+  /* Remove background, border, and padding to integrate grid */
+  background: none;
+  padding: 0;
+  border: none;
+  margin-top: 2rem; /* Add margin above the grid */
 }

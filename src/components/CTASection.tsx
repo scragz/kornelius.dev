@@ -40,20 +40,13 @@ const CTASection: React.FC = () => {
             Stop dreamin', start schemin'. Grab Kornelius for VS Code and unleash your inner prompt demon.
           </Text>
 
-          {/* Vibey Download/Install Button */}
-          {/* TODO: Add hover/click animations later */}
-          {/* TODO: Add analytics tracking later */}
           <Button
-            size="xl" // Make the button prominent
-            // TODO: Add link to VS Code Marketplace or installation trigger
-            // component="a"
-            // href="https://marketplace.visualstudio.com/items?itemName=YourPublisher.Kornelius"
-            // target="_blank"
-            // rel="noopener noreferrer"
-            // TODO: Apply nu metal/Myspace styling (color, variant, radius)
-            // variant="gradient"
-            // gradient={{ from: 'pink', to: 'yellow' }}
-            className={classes.ctaButton} // Add class for styling
+            size="xl"
+            component="a"
+            href="https://marketplace.visualstudio.com/items?itemName=scragz.kornelius"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.ctaButton}
           >
             GET KORNELIUS NOW!
           </Button>

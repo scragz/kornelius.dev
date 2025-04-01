@@ -6,6 +6,7 @@ import classes from './App.module.css'; // Import App-specific styles
 // Keep './App.css' import below if you add global styles specific to App later.
 // import './App.css'
 import HeroSection from './components/HeroSection'; // Import the HeroSection
+import WorkflowOverview from './components/WorkflowOverview'; // Import the overall workflow section
 import PromptsShowcase from './components/PromptsShowcase'; // Import the combined showcase
 // Removed FeaturesOverview import
 import OtherFeatures from './components/OtherFeatures'; // Import the new OtherFeatures component
@@ -28,15 +29,11 @@ import CTASection from './components/CTASection'; // Import the CTASection
  * - This component renders the main sections of the single-page application.
  */
 function App() {
-  // TODO: Replace with actual VS Code Marketplace URL
-  const marketplaceUrl = "https://marketplace.visualstudio.com/items?itemName=scragz.kornelius";
   const githubUrl = "https://github.com/scragz/kornelius";
+  const downloadUrl = "https://github.com/scragz/kornelius/releases/download/v0.1.12/kornelius-0.1.12.vsix";
 
-  // The main structure will likely involve a top-level fragment or a Mantine Layout component
-  // to hold all the page sections.
   return (
     <>
-      {/* Fixed Icons Top Right */}
       <Box className={classes.fixedIcons}>
         <Group gap="sm">
           <Tooltip label="View on GitHub" withArrow position="bottom-end">
@@ -47,7 +44,7 @@ function App() {
             </Anchor>
           </Tooltip>
           <Tooltip label="Get Extension" withArrow position="bottom-end">
-            <Anchor href={marketplaceUrl} target="_blank" rel="noopener noreferrer">
+            <Anchor href={downloadUrl} target="_blank" rel="noopener noreferrer">
               <ActionIcon variant="transparent" size="lg" className={classes.iconLink}>
                 <IconDownload size={28} />
               </ActionIcon>
@@ -57,6 +54,7 @@ function App() {
       </Box>
 
       <HeroSection />
+      <WorkflowOverview /> {/* Render the overall workflow section */}
       <PromptsShowcase /> {/* Render the grouped prompts section */}
       <OtherFeatures /> {/* Render the miscellaneous features section */}
       <CTASection /> {/* Render the CTASection */}

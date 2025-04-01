@@ -22,10 +22,9 @@ import classes from './HeroSection.module.css';
 const HeroSection: React.FC = () => {
 
   const handleScrollDown = () => {
-    // Target the ID of the PromptsShowcase container
-    const promptsSection = document.getElementById('prompts-section');
-    if (promptsSection) {
-      promptsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const section = document.getElementById('workflow-overview');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -47,7 +46,7 @@ const HeroSection: React.FC = () => {
 
           {/* Tagline */}
           <Text size="xl" className={classes.heroTagline}>
-            Streamline AI prompt creation and context management in VS Code.
+            Your vibe coding companion.
           </Text>
 
           {/* Scroll Down CTA Button */}

@@ -70,7 +70,10 @@
   background-color: rgba(0, 0, 0, 0.6);
   color: var(--function-color, #d2a8ff);
   font-family: 'Metal Mania', cursive;
-  --mantine-font-size-xl: 3rem;
+  --mantine-font-size-xl: 2rem;
+  @media (min-width: 62em) {
+    --mantine-font-size-xl: 3rem;
+  }
   letter-spacing: 1.5px;
   padding: 1em 2em; /* More padding */
   border-radius: 0;

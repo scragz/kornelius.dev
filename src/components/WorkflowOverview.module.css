@@ -1,0 +1,32 @@
+.overallWorkflowContainer {
+  /* Style for the container holding only the overall workflow */
+  padding: 2rem 1rem;
+  border-top: 3px solid var(--comment-color, #8b949e);
+  border-bottom: 3px solid var(--comment-color, #8b949e);
+  background-color: rgba(20, 20, 20, 0.7); /* Darker background */
+  margin-top: 4rem;
+  margin-bottom: 2rem; /* Less margin below */
+}
+
+.overallTitle {
+  /* Style for "The Grand Scheme" title */
+  --mantine-font-family-headings: 'Metal Mania', cursive;
+  font-size: 4rem;
+  color: var(--type-color, #79c0ff);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+  margin-bottom: 1rem !important;
+  transform: rotate(1deg);
+}
+
+.overallDescription {
+  /* Style for the descriptive text */
+  font-family: 'VT323', monospace;
+  --mantine-font-size-md: 1.5rem;
+  color: var(--string-color, #a5d6ff);
+  padding: 0 1rem !important;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 2rem !important;
+}
+
+/* Styles for .diagramBox moved to Diagram.module.css */

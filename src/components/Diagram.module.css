@@ -1,0 +1,23 @@
+/* Diagram specific styles */
+
+.diagramBox {
+  /* Style the container for the diagram - Remove borders/background */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  background: none; /* Remove background color and image */
+  margin-bottom: 2rem; /* Add margin below the diagram box itself */
+}
+
+.diagramImage {
+  /* Style the images themselves */
+  display: block; /* Remove extra space below image */
+  max-width: 100%; /* Ensure responsiveness */
+  height: auto;
+  /* Remove the border from the image itself */
+  /* border: 3px solid var(--mantine-color-dark-4); */
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+  /* Remove the background color to let the box background show through */
+  /* background-color: var(--mantine-color-dark-7); */
+  /* Optional: Add a filter for effect */
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.7)) brightness(1.1);
+}
