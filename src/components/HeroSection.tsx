@@ -33,16 +33,12 @@ const HeroSection: React.FC = () => {
     <Box className={classes.heroBox}>
       <Container size="md" className={classes.heroContainer}>
         <Stack align="center" gap="xl">
-          <svg width="280" height="210" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" className={classes.heroLogoSvg}>
-            <path d="M30 20 H 170 V 130 H 30 Z" fill="url(#logoGradient)" stroke="var(--keyword-color, #ff7b72)" strokeWidth="3" transform="skewX(-5) rotate(-3)" />
-            <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontFamily="Bungee, sans-serif" fontSize="60" fill="var(--type-color, #79c0ff)" transform="rotate(-5 100 75)">K!</text>
-            <defs>
-              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'var(--function-color, #d2a8ff)', stopOpacity: 1 }} />
-                <stop offset="100%" style={{ stopColor: 'var(--keyword-color, #ff7b72)', stopOpacity: 1 }} />
-              </linearGradient>
-            </defs>
-          </svg>
+          {/* Barbed Wire Image */}
+          <img
+            src="/barbed-wire-color.svg"
+            alt="Barbed Wire Logo"
+            className={classes.barbedWireLogo}
+          />
 
           {/* Headline */}
           <Title order={1} className={classes.heroTitle}>

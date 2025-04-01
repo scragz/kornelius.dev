@@ -19,6 +19,7 @@
 import React from 'react';
 import { Container, Title, SimpleGrid } from '@mantine/core';
 import GitHubPromptCard from './GitHubPromptCard'; // Import the prompt card component
+import classes from './PromptsShowcase.module.css'; // Import CSS module
 
 // Base URLs for GitHub view and raw content
 const GITHUB_VIEW_BASE_URL = 'https://github.com/scragz/kornelius/blob/main/prompts';
@@ -51,13 +52,13 @@ const auditPrompts = allPrompts.filter(p => p.title.startsWith('Audit:'));
 const PromptsShowcase: React.FC = () => {
   return (
     // Assign ID for scrolling from Hero CTA
-    <Container id="prompts-section" size="lg" my="xl" /* TODO: Apply theme styling */>
+    <Container id="prompts-section" size="lg" my="xl" className={classes.showcaseContainer}>
 
       {/* Create Mode Section */}
-      <Title order={2} ta="center" mb="lg" /* TODO: Style title */>
-        Create Mode Prompts
+      <Title order={2} ta="center" mb="lg" className={classes.sectionTitle}>
+        Create Mode
       </Title>
-      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" mb="xl">
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" mb="xl" className={classes.promptGrid}>
         {createPrompts.map((prompt) => (
           <GitHubPromptCard
             key={prompt.id}
@@ -70,10 +71,10 @@ const PromptsShowcase: React.FC = () => {
       </SimpleGrid>
 
       {/* Debug Mode Section */}
-      <Title order={2} ta="center" mb="lg" mt="xl" /* TODO: Style title */>
-        Debug Mode Prompts
+      <Title order={2} ta="center" mb="lg" mt="xl" className={classes.sectionTitle}>
+        Debug Mode
       </Title>
-      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" mb="xl">
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" mb="xl" className={classes.promptGrid}>
         {debugPrompts.map((prompt) => (
           <GitHubPromptCard
             key={prompt.id}
@@ -86,10 +87,10 @@ const PromptsShowcase: React.FC = () => {
       </SimpleGrid>
 
       {/* Audit Mode Section */}
-      <Title order={2} ta="center" mb="lg" mt="xl" /* TODO: Style title */>
-        Audit Mode Prompts
+      <Title order={2} ta="center" mb="lg" mt="xl" className={classes.sectionTitle}>
+        Audit Mode
       </Title>
-      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" className={classes.promptGrid}>
         {auditPrompts.map((prompt) => (
           <GitHubPromptCard
             key={prompt.id}

@@ -24,13 +24,31 @@
   animation-fill-mode: forwards;
 }
 
-.heroLogoSvg {
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-  animation: pulseGlow 4s infinite alternate ease-in-out; /* Assumes pulseGlow is defined globally */
+.barbedWireLogo {
+  width: 80%; /* Make it large */
+  max-width: 600px; /* Max size */
+  opacity: 0.5; /* Make it slightly transparent */
+  position: absolute; /* Position behind */
+  top: 35%; /* Move it up significantly */
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg); /* Center horizontally, adjust vertical and rotation */
+  z-index: 0; /* Behind title but above background */
+  filter: drop-shadow(5px 7px 5px rgb(0 0 0 / 0.6));
+  opacity: 0.3; /* Make it more subtle */
+  width: 60%; /* Slightly smaller */
+  max-width: 500px;
 }
 
+/* Remove unused styles */
+/* .titleShapeContainer { ... } */
+/* .skewedShapeSvg { ... } */
+
 .heroTitle {
+  /* Revert to default positioning, let global h1 styles apply */
   max-width: 100%;
+  margin-top: 2rem; /* Add some space below the logo */
+  position: relative; /* Ensure it's above the logo */
+  z-index: 1;
 }
 
 .heroTagline {
@@ -39,13 +57,25 @@
 }
 
 .scrollButton {
-  margin-top: 2rem;
-  border-color: var(--comment-color, #8b949e);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; /* Add transitions */
+  margin-top: 3rem; /* More space */
+  border: 2px solid var(--keyword-color, #ff7b72); /* Theme color border */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent */
+  color: var(--keyword-color, #ff7b72);
+  font-family: 'Metal Mania', cursive; /* Use the cool font */
+  font-weight: bold;
+  font-size: 2rem !important;
+  letter-spacing: 1px;
+  padding: 0.8em 1.5em;
+  border-radius: 0; /* Sharp corners */
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0 0 0px var(--keyword-color, #ff7b72); /* Inner shadow, no initial glow */
 }
 
 .scrollButton:hover {
-  transform: scale(1.1);
-  border-color: var(--type-color, #79c0ff);
-  box-shadow: 0 0 15px var(--type-color, #79c0ff);
+  transform: scale(1.05) rotate(-2deg); /* Slight scale/rotate */
+  background-color: var(--keyword-color, #ff7b72); /* Fill with color */
+  color: var(--mantine-color-dark-9); /* Dark text on hover */
+  border-color: var(--keyword-color, #ff7b72);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.7), 0 0 15px var(--keyword-color, #ff7b72); /* Enhance inner shadow + add glow */
 }

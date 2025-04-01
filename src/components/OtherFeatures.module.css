@@ -1,0 +1,76 @@
+/* OtherFeatures specific styles */
+
+.otherFeaturesContainer {
+  padding: 1.5rem;
+  border-top: 5px solid var(--function-color, #d2a8ff);
+  border-bottom: 5px solid var(--function-color, #d2a8ff);
+  background-color: rgba(25, 25, 25, 0.6); /* Slightly different dark background */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.otherTitle {
+  /* Inherit h3 styles from index.css but adjust */
+  font-family: 'Bungee', sans-serif; /* Different blocky font */
+  font-size: 2.5rem;
+  color: var(--type-color, #79c0ff);
+  text-shadow: 1px 1px 0 var(--keyword-color, #ff7b72), 2px 2px 0 rgba(0,0,0,0.5); /* Double shadow */
+  transform: rotate(1deg) skewX(-2deg);
+  margin-bottom: 2rem !important;
+  border: none; /* Remove inherited border if any */
+  padding: 0;
+}
+
+.otherTitle::before,
+.otherTitle::after {
+  content: none; /* Remove inherited pseudo-elements */
+}
+
+.featureList {
+  /* Style the list container */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+}
+
+.featureItem {
+  /* Style individual list items */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px dashed var(--comment-color, #8b949e);
+  background-color: rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  display: flex; /* Use flex for better alignment */
+  align-items: center; /* Align icon and text vertically */
+}
+
+.featureItem:hover {
+  background-color: rgba(var(--mantine-color-dark-4-rgb), 0.5);
+  border-color: var(--type-color, #79c0ff);
+}
+
+.featureIcon {
+  /* Style the ThemeIcon container */
+  background-color: var(--keyword-color, #ff7b72); /* Use a theme color */
+  border: 2px solid var(--mantine-color-dark-8);
+  margin-right: 1rem; /* Space between icon and text */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  transform: rotate(-5deg);
+}
+
+.featureItemTitle {
+  /* Style the title text */
+  font-family: 'Anton', sans-serif; /* Use another heading font */
+  font-size: 1.2rem;
+  color: var(--string-color, #a5d6ff);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem; /* Space between title and description */
+}
+
+.featureItemDesc {
+  /* Style the description text */
+  font-family: 'VT323', monospace; /* Use the retro font */
+  --mantine-font-size-sm: 1.3rem; /* Slightly larger */
+  color: var(--comment-color, #8b949e);
+  opacity: 0.9;
+}

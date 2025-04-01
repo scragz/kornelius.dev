@@ -23,19 +23,20 @@
  */
 import React from 'react';
 import { Container, Title, Text, Button, Group } from '@mantine/core';
+import classes from './CTASection.module.css'; // Import CSS module
 
 const CTASection: React.FC = () => {
   return (
-    <Container size="md" my="xl" py="xl" /* TODO: Apply theme styling, maybe background */>
+    <Container size="md" my="xl" py="xl" className={classes.ctaContainer}>
       <Group justify="center">
         <div style={{ textAlign: 'center' }}>
           {/* Vibey Headline */}
-          <Title order={2} mb="md" /* TODO: Style title */>
+          <Title order={2} mb="md" className={classes.ctaTitle}>
             ENOUGH TALK. LET'S SHRED.
           </Title>
 
           {/* Vibey Descriptive Text */}
-          <Text size="lg" c="dimmed" mb="xl" /* TODO: Style text */>
+          <Text size="lg" mb="xl" className={classes.ctaText}>
             Stop dreamin', start schemin'. Grab Kornelius for VS Code and unleash your inner prompt demon.
           </Text>
 
@@ -52,6 +53,7 @@ const CTASection: React.FC = () => {
             // TODO: Apply nu metal/Myspace styling (color, variant, radius)
             // variant="gradient"
             // gradient={{ from: 'pink', to: 'yellow' }}
+            className={classes.ctaButton} // Add class for styling
           >
             GET KORNELIUS NOW!
           </Button>

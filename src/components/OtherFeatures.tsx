@@ -17,6 +17,7 @@
 import React from 'react';
 import { Container, Title, Text, List, ThemeIcon } from '@mantine/core';
 import { IconHammer, IconCloudDownload } from '@tabler/icons-react'; // Example icons
+import classes from './OtherFeatures.module.css'; // Import CSS module
 
 const OtherFeatures: React.FC = () => {
   const otherFeatures = [
@@ -25,31 +26,29 @@ const OtherFeatures: React.FC = () => {
   ];
 
   return (
-    <Container size="md" my="xl">
-      <Title order={3} ta="center" mb="lg" /* TODO: Style title */>
+    <Container size="md" my="xl" className={classes.otherFeaturesContainer}>
+      <Title order={3} ta="center" mb="lg" className={classes.otherTitle}>
         Also Cool...
       </Title>
       <List
-        spacing="md"
-        size="sm"
+        spacing="lg" /* Increase spacing */
+        size="md" /* Increase size */
         center
-        icon={
-          <ThemeIcon color="dimmed" size={24} radius="xl">
-            {/* Default icon if specific one isn't needed */}
-          </ThemeIcon>
-        }
+        className={classes.featureList}
+        /* Remove default icon prop, handle in CSS if needed */
       >
         {otherFeatures.map((feature, index) => (
           <List.Item
             key={index}
+            className={classes.featureItem}
             icon={
-              <ThemeIcon color="blue" size={24} radius="xl"> {/* TODO: Theme color */}
-                <feature.icon size="1rem" />
+              <ThemeIcon color="gray" size={30} radius="sm" className={classes.featureIcon}> {/* Style icon container */}
+                <feature.icon size="1.2rem" />
               </ThemeIcon>
             }
           >
-            <Text fw={500}>{feature.title}</Text>
-            <Text size="sm" c="dimmed">{feature.description}</Text>
+            <Text fw={700} className={classes.featureItemTitle}>{feature.title}</Text>
+            <Text size="sm" className={classes.featureItemDesc}>{feature.description}</Text>
           </List.Item>
         ))}
       </List>
