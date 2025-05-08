@@ -40,7 +40,7 @@ const allPrompts = [
   { id: 'debug-act', title: 'Debug: Act', viewUrl: `${GITHUB_VIEW_BASE_URL}/debug/act.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/debug/act.prompt`, description: 'Generate code patches or refactoring suggestions.' },
   // Audit Mode
   { id: 'audit-sec', title: 'Audit: Security', viewUrl: `${GITHUB_VIEW_BASE_URL}/audit/security.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/audit/security.prompt`, description: 'Perform a security audit on the provided code.' },
-  { id: 'audit-acc', title: 'Audit: Accessibility', viewUrl: `${GITHUB_VIEW_BASE_URL}/audit/accessibility.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/audit/a11y.prompt`, description: 'Perform an accessibility audit.' },
+  { id: 'audit-acc', title: 'Audit: Accessibility', viewUrl: `${GITHUB_VIEW_BASE_URL}/audit/a11y.prompt`, rawUrl: `${GITHUB_RAW_BASE_URL}/audit/a11y.prompt`, description: 'Perform an accessibility audit.' },
 ];
 
 // Filter prompts by mode based on title prefix
