@@ -5,11 +5,16 @@
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease-out, border-color 0.3s ease;
   border: 3px solid var(--comment-color, #8b949e); /* Thicker solid border */
   border-radius: 0; /* Sharp corners */
-  background-color: rgba(20, 20, 20, 0.85); /* Darker, less transparent */
+  background-color: var(--mantine-color-dark-6);
   backdrop-filter: blur(3px) grayscale(0.3); /* More blur, slight desaturation */
   overflow: visible; /* Allow pseudo-elements to peek out */
   position: relative; /* Needed for pseudo-elements */
   box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Inner shadow */
+}
+
+:where([data-mantine-color-scheme='light']) .card {
+  background-color: var(--mantine-color-dark-6) !important;
+  border-color: var(--mantine-color-dark-4) !important;
 }
 
 /* Remove the old scanline overlay */
@@ -111,7 +116,10 @@
   color: var(--comment-color, #8b949e);
   transition: transform 0.2s ease, color 0.2s ease;
   border: 1px solid transparent; /* Add border for hover effect */
+  color: var(--comment-color, #8b949e) !important;
+  --ai-color: var(--comment-color, #8b949e) !important;
 }
+
 
 .copyIcon:hover {
   transform: scale(1.3) rotate(10deg);
