@@ -29,18 +29,13 @@
 }
 
 .barbedWireLogo {
-  width: 80%; /* Make it large */
-  max-width: 600px; /* Max size */
-  opacity: 0.5; /* Make it slightly transparent */
-  position: absolute; /* Position behind */
-  top: 35%; /* Move it up significantly */
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-10deg); /* Center horizontally, adjust vertical and rotation */
-  z-index: 0; /* Behind title but above background */
-  filter: drop-shadow(5px 7px 5px rgb(0 0 0 / 0.6));
-  opacity: 0.3; /* Make it more subtle */
-  width: 60%; /* Slightly smaller */
+  width: 60%;
   max-width: 500px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  filter: drop-shadow(5px 7px 5px rgb(0 0 0 / 0.6));
 }
 
 /* Remove unused styles */
