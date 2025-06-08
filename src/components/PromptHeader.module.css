@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid var(--comment-color, #8b949e);
+  background-color: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoImage {
+  width: 40px;
+  height: auto;
+}
+
+.title {
+  font-family: 'Bungee', sans-serif;
+  color: var(--keyword-color, #ff7b72);
+}
+
+.iconLink {
+  color: var(--comment-color, #8b949e);
+}
+
+.iconLink:hover {
+  color: var(--type-color, #79c0ff);
+}

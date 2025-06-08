@@ -22,19 +22,20 @@
  */
 import React, { useState, useCallback } from 'react';
 import { Card, Text, Group, Tooltip, ActionIcon, Anchor } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { IconCopy, IconCheck, IconAlertCircle, IconLoader } from '@tabler/icons-react';
 import classes from './GitHubPromptCard.module.css'; // Import CSS module
 
 interface GitHubPromptCardProps {
+  id: string;
   title: string;
-  viewUrl: string; // URL to the prompt file view on GitHub
-  rawUrl: string; // URL to the raw prompt text file for fetching
-  description?: string; // Optional description
+  rawUrl: string;
+  description?: string;
 }
 
 type CopyState = 'idle' | 'loading' | 'success' | 'error';
 
-const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ title, viewUrl, rawUrl, description }) => {
+const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ id, title, rawUrl, description }) => {
   const [copyState, setCopyState] = useState<CopyState>('idle');
 
   const handleFetchAndCopy = useCallback(async (event: React.MouseEvent) => {
@@ -84,12 +85,11 @@ const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ title, viewUrl, raw
     <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.card}>
       <Group justify="space-between" align="flex-start" wrap="nowrap" className={classes.contentGroup}>
         <Anchor
-          href={viewUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          component={Link}
+          to={`/prompt/${id}`}
           fz="lg"
           fw={700}
-          className={classes.titleLink} // Apply class from CSS module
+          className={classes.titleLink}
         >
           {title}
         </Anchor>
