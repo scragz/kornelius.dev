@@ -13,14 +13,20 @@
   color: inherit;
 }
 
-.logoImage {
-  width: 40px;
+
+.logoContainer {
+  position: relative;
+  width: 120px;
+  height: 35px;
+}
+
+.barbedWireSmall {
+  width: 100%;
   height: auto;
 }
 
 .title {
   font-family: 'Bungee', sans-serif;
-  color: var(--keyword-color, #ff7b72);
 }
 
 .iconLink {

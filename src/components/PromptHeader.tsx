@@ -1,7 +1,8 @@
-import { ActionIcon, Anchor, Group, Image, Title } from '@mantine/core';
+import { ActionIcon, Anchor, Group, Title } from '@mantine/core';
 import { IconBrandGithub } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import classes from './PromptHeader.module.css';
+import logoClasses from './shared/Logo.module.css';
 import logo from '../assets/images/barbed-wire-color.svg';
 
 const githubUrl = 'https://github.com/scragz/kornelius';
@@ -10,8 +11,10 @@ const PromptHeader = () => (
   <header className={classes.header}>
     <Anchor component={Link} to="/" className={classes.logoLink}>
       <Group gap="xs">
-        <Image src={logo} alt="Logo" className={classes.logoImage} />
-        <Title order={3} className={classes.title}>KoЯnelius</Title>
+        <div className={`${logoClasses.logoContainer} ${classes.logoContainer}`}>
+          <img src={logo} alt="Logo" className={`${logoClasses.barbedWire} ${classes.barbedWireSmall}`} />
+          <Title order={3} className={`${logoClasses.logoText} ${classes.title}`}>KoЯnelius</Title>
+        </div>
       </Group>
     </Anchor>
     <Anchor href={githubUrl} target="_blank" rel="noopener noreferrer">
