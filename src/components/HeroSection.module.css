@@ -9,20 +9,23 @@
   padding-bottom: 5vh;
   /* Animated Background - Note: Mantine variables used directly */
   background: radial-gradient(ellipse at center, rgba(var(--mantine-color-dark-6-rgb) / 0.8), rgba(var(--mantine-color-dark-9-rgb) / 0.9)),
-              linear-gradient(-45deg, var(--keyword-color, #ff7b72), var(--function-color, #d2a8ff), var(--type-color, #79c0ff), var(--string-color, #a5d6ff));
+    linear-gradient(-45deg, var(--keyword-color, #ff7b72), var(--function-color, #d2a8ff), var(--type-color, #79c0ff), var(--string-color, #a5d6ff));
   background-size: 200% 200%, 400% 400%;
-  animation: backgroundShift 15s ease infinite; /* Assumes backgroundShift is defined globally */
+  animation: backgroundShift 15s ease infinite;
+  /* Assumes backgroundShift is defined globally */
 }
 
 .heroContainer {
   position: relative;
   z-index: 1;
   text-align: center;
-  animation-name: fadeIn; /* Assumes fadeIn is defined globally */
+  animation-name: fadeIn;
+  /* Assumes fadeIn is defined globally */
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   padding-top: 6rem;
+
   @media (min-width: 62em) {
     padding-top: 4rem;
   }
@@ -43,38 +46,66 @@
 /* .skewedShapeSvg { ... } */
 
 .heroTitle {
-  position: relative; /* Ensure it's above the logo */
+  position: relative;
+  /* Ensure it's above the logo */
   z-index: 1;
+
+  --mantine-h1-font-size: 3rem;
+
+  @media (min-width: 62em) {
+    /* 992px */
+    --mantine-h1-font-size: 5rem;
+  }
+}
+
+.heroLogoContainer::after {
+  font-size: 3rem;
+
+  @media (min-width: 62em) {
+    /* 992px */
+    font-size: 5rem;
+  }
 }
 
 .heroTagline {
   font-family: 'VT323', monospace;
   --mantine-font-size-xl: 2rem;
+
   @media (min-width: 62em) {
     --mantine-font-size-xl: 3rem;
   }
 }
 
 .scrollButton {
-  margin-top: 3rem; /* More space */
-  border: 2px solid var(--keyword-color, #ff7b72); /* Theme color border */
-  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent */
+  margin-top: 3rem;
+  /* More space */
+  border: 2px solid var(--keyword-color, #ff7b72);
+  /* Theme color border */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Dark semi-transparent */
   color: var(--keyword-color, #ff7b72);
-  font-family: 'Metal Mania', cursive; /* Use the cool font */
+  font-family: 'Metal Mania', cursive;
+  /* Use the cool font */
   font-weight: bold;
   font-size: 2rem !important;
   letter-spacing: 1px;
   padding: 0.8em 1.5em;
-  border-radius: 0; /* Sharp corners */
+  border-radius: 0;
+  /* Sharp corners */
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0 0 0px var(--keyword-color, #ff7b72); /* Inner shadow, no initial glow */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 0 0px var(--keyword-color, #ff7b72);
+  /* Inner shadow, no initial glow */
 }
 
 .scrollButton:hover {
-  transform: scale(1.05) rotate(-2deg); /* Slight scale/rotate */
-  background-color: var(--keyword-color, #ff7b72); /* Fill with color */
-  color: var(--mantine-color-dark-9); /* Dark text on hover */
+  transform: scale(1.05) rotate(-2deg);
+  /* Slight scale/rotate */
+  background-color: var(--keyword-color, #ff7b72);
+  /* Fill with color */
+  color: var(--mantine-color-dark-9);
+  /* Dark text on hover */
   border-color: var(--keyword-color, #ff7b72);
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.7), 0 0 15px var(--keyword-color, #ff7b72); /* Enhance inner shadow + add glow */
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.7), 0 0 15px var(--keyword-color, #ff7b72);
+  /* Enhance inner shadow + add glow */
 }

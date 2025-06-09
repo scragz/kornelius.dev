@@ -12,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -23,6 +25,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,27 +43,4 @@
 
 .read-the-docs {
   color: #888;
-}
-
-
-.fixedIcons {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1000; /* Ensure it's above other content */
-  background-color: rgba(10, 10, 10, 0.7); /* Dark semi-transparent background */
-  padding: 8px;
-  border: 2px solid var(--comment-color, #8b949e);
-  border-radius: 4px;
-  backdrop-filter: blur(3px);
-}
-
-.iconLink {
-  color: var(--comment-color, #8b949e);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.iconLink:hover {
-  color: var(--type-color, #79c0ff);
-  transform: scale(1.2) rotate(5deg);
 }

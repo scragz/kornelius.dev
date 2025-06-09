@@ -3,20 +3,28 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark; /* Keep color scheme preference */
+  color-scheme: dark;
+  /* Keep color scheme preference */
 
   /* Define placeholder colors - TODO: Replace with actual theme colors */
-  --keyword-color: #ff7b72; /* Example: reddish */
-  --function-color: #d2a8ff; /* Example: purplish */
-  --type-color: #79c0ff; /* Example: blueish */
-  --comment-color: #8b949e; /* Example: greyish */
-  --string-color: #a5d6ff; /* Example: light blue */
-  --vscode-input-placeholderForeground: #6a737d; /* Example: darker grey */
+  --keyword-color: #ff7b72;
+  /* Example: reddish */
+  --function-color: #d2a8ff;
+  /* Example: purplish */
+  --type-color: #79c0ff;
+  /* Example: blueish */
+  --comment-color: #8b949e;
+  /* Example: greyish */
+  --string-color: #a5d6ff;
+  /* Example: light blue */
+  --vscode-input-placeholderForeground: #6a737d;
+  /* Example: darker grey */
   --text-color: var(--comment-color);
 
   /* Default text/background for dark mode */
   color: rgba(255, 255, 255, 0.87);
-  background-color: #1e1e1e; /* Slightly different dark background */
+  background-color: #1e1e1e;
+  /* Slightly different dark background */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,6 +37,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -45,10 +54,14 @@ body {
   background:
     linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
     linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)),
-    linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), /* Horizontal lines */
-    linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px); /* Vertical lines */
-  background-size: 100% 2px, 3px 100%, 53px 53px, 53px 53px; /* Adjust sizes for texture */
-  background-color: var(--mantine-color-dark-8, #1e1e1e); /* Fallback background */
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    /* Horizontal lines */
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  /* Vertical lines */
+  background-size: 100% 2px, 3px 100%, 53px 53px, 53px 53px;
+  /* Adjust sizes for texture */
+  background-color: var(--mantine-color-dark-8, #1e1e1e);
+  /* Fallback background */
 }
 
 /* Removed default h1 style */
@@ -66,13 +79,19 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s, transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Added transitions */
+  transition: border-color 0.25s, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  /* Added transitions */
 }
+
 button:hover {
-  border-color: var(--function-color, #d2a8ff); /* Use theme color */
-  transform: scale(1.05) rotate(-1deg); /* Add slight scale/rotate */
-  box-shadow: 0 0 10px var(--function-color, #d2a8ff); /* Add glow */
+  border-color: var(--function-color, #d2a8ff);
+  /* Use theme color */
+  transform: scale(1.05) rotate(-1deg);
+  /* Add slight scale/rotate */
+  box-shadow: 0 0 10px var(--function-color, #d2a8ff);
+  /* Add glow */
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -84,6 +103,7 @@ button:focus-visible {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -93,40 +113,6 @@ button:focus-visible {
 /* KoЯnelius - Typography Styles */
 
 /* Typography with myspace/nu-metal style */
-h1 {
-  --mantine-font-family-headings: 'Bungee', sans-serif;
-  --mantine-h1-font-size: 3rem;
-
-  @media (min-width: 62em) { /* 992px */
-    --mantine-h1-font-size: 5rem;
-  }
-  font-weight: bold;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transform: rotate(-2deg) skew(-3deg);
-  background: linear-gradient(90deg,
-    var(--keyword-color) 0%,
-    var(--function-color) 50%,
-    var(--type-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
-  position: relative;
-}
-
-h1::after {
-  content: "Kornelius";
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  opacity: 0.2;
-  z-index: -1;
-  transform: skew(10deg);
-  -webkit-text-fill-color: var(--comment-color);
-}
-
 h2 {
   --mantine-font-family-headings: 'Anton', sans-serif;
   --mantine-h2-font-size: 3.4em;
@@ -191,10 +177,10 @@ h4::after {
   width: 100%;
   height: 2px;
   background: linear-gradient(to right,
-    var(--keyword-color),
-    var(--string-color),
-    var(--type-color),
-    transparent);
+      var(--keyword-color),
+      var(--string-color),
+      var(--type-color),
+      transparent);
 }
 
 p {
@@ -218,6 +204,7 @@ p {
   from {
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), 0 0 5px var(--function-color), 0 0 10px var(--function-color);
   }
+
   to {
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), 0 0 8px var(--function-color), 0 0 15px var(--function-color);
   }
@@ -225,23 +212,40 @@ p {
 
 /* Animation for loading icon */
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Animation for Hero background */
 @keyframes backgroundShift {
-  0% { background-position: 0% 50%, 0% 0%; } /* Position for radial and linear gradients */
-  50% { background-position: 100% 50%, 100% 100%; }
-  100% { background-position: 0% 50%, 0% 0%; }
+  0% {
+    background-position: 0% 50%, 0% 0%;
+  }
+
+  /* Position for radial and linear gradients */
+  50% {
+    background-position: 100% 50%, 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%, 0% 0%;
+  }
 }
 
 /* Animation for Hero logo */
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)) drop-shadow(0 0 5px var(--type-color, #79c0ff));
     transform: scale(1);
   }
+
   50% {
     filter: drop-shadow(3px 5px 5px rgb(0 0 0 / 0.6)) drop-shadow(0 0 15px var(--type-color, #79c0ff));
     transform: scale(1.03);

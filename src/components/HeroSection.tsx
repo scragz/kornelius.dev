@@ -16,9 +16,10 @@
  */
 import { Container, Title, Text, Box, Button, Stack } from '@mantine/core';
 import React from 'react';
+import classNames from 'classnames';
 import { IconArrowDown } from '@tabler/icons-react';
 import classes from './HeroSection.module.css';
-import logoClasses from './shared/Logo.module.css';
+import logoClasses from './Logo.module.css';
 import logo from '../assets/images/barbed-wire-color.svg';
 
 const HeroSection: React.FC = () => {
@@ -34,16 +35,16 @@ const HeroSection: React.FC = () => {
     <Box className={classes.heroBox}>
       <Container size="md" className={classes.heroContainer}>
         <Stack align="center" gap="xl">
-          <div className={logoClasses.logoContainer}>
+          <div className={classNames(logoClasses.logoContainer, classes.heroLogoContainer)}>
             {/* Barbed Wire Image */}
             <img
               src={logo}
               alt="Barbed Wire Logo"
-              className={`${logoClasses.barbedWire} ${classes.barbedWireLogo}`}
+              className={classNames(logoClasses.barbedWire, classes.barbedWireLogo)}
             />
 
             {/* Headline */}
-            <Title order={1} className={`${logoClasses.logoText} ${classes.heroTitle}`}>
+            <Title order={1} className={classNames(logoClasses.logoText, classes.heroTitle)}>
               KoЯnelius
             </Title>
           </div>
