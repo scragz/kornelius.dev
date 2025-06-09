@@ -86,7 +86,7 @@ const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ id, title, rawUrl, 
       <Group justify="space-between" align="flex-start" wrap="nowrap" className={classes.contentGroup}>
         <Anchor
           component={Link}
-          to={`/prompt/${id}`}
+          to={`/prompts/${id}`}
           fz="lg"
           fw={700}
           className={classes.titleLink}

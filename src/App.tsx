@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/prompt/:id" element={<PromptPage />} />
+        <Route path="/prompts/:id" element={<PromptPage />} />
       </Routes>
     </BrowserRouter>
   );
