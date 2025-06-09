@@ -1,5 +1,5 @@
 /// <reference types="@cloudflare/workers-types" />
-import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
+import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler';
 
 interface Env {
   __STATIC_CONTENT: KVNamespace;
@@ -11,8 +11,8 @@ export default {
     const url = new URL(request.url);
     
     try {
-      // Try to get the asset from KV
-      return await getAssetFromKV(
+      // First, try to serve the exact requested file
+      const response = await getAssetFromKV(
         {
           request,
           waitUntil: ctx.waitUntil.bind(ctx),
@@ -20,25 +20,41 @@ export default {
         {
           ASSET_NAMESPACE: env.__STATIC_CONTENT,
           ASSET_MANIFEST: JSON.parse(env.__STATIC_CONTENT_MANIFEST),
+          mapRequestToAsset: mapRequestToAsset,
         }
       );
+      
+      return response;
     } catch {
-      // If asset not found, serve index.html for SPA routing
-      try {
-        const indexRequest = new Request(`${url.protocol}//${url.host}/index.html`, request);
-        return await getAssetFromKV(
-          {
-            request: indexRequest,
-            waitUntil: ctx.waitUntil.bind(ctx),
-          },
-          {
-            ASSET_NAMESPACE: env.__STATIC_CONTENT,
-            ASSET_MANIFEST: JSON.parse(env.__STATIC_CONTENT_MANIFEST),
-          }
-        );
-      } catch {
-        return new Response('Not found', { status: 404 });
+      // If the exact file wasn't found, check if it's a potential SPA route
+      // (not a request for a static asset like .js, .css, .png, etc.)
+      if (!url.pathname.includes('.') || url.pathname.endsWith('.html')) {
+        try {
+          // Serve index.html for SPA routing
+          const indexRequest = new Request(`${url.protocol}//${url.host}/index.html`, {
+            method: request.method,
+            headers: request.headers,
+          });
+          
+          return await getAssetFromKV(
+            {
+              request: indexRequest,
+              waitUntil: ctx.waitUntil.bind(ctx),
+            },
+            {
+              ASSET_NAMESPACE: env.__STATIC_CONTENT,
+              ASSET_MANIFEST: JSON.parse(env.__STATIC_CONTENT_MANIFEST),
+              mapRequestToAsset: mapRequestToAsset,
+            }
+          );
+        } catch {
+          // If even index.html can't be served, return 404
+          return new Response('Not found', { status: 404 });
+        }
       }
+      
+      // For static assets that weren't found, return 404
+      return new Response('Asset not found', { status: 404 });
     }
   },
 };
