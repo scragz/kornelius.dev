@@ -52,8 +52,6 @@
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
   border-bottom: 3px solid var(--type-color, #79c0ff);
   padding-bottom: 5px;
-  margin-bottom: 1rem;
-  /* Override Mantine default margin */
   transform: rotate(-1deg) skewX(-4deg);
   animation: none;
   /* Override flicker animation if inherited */
@@ -79,6 +77,6 @@
   background: none;
   padding: 0;
   border: none;
-  margin-top: 2rem;
+  margin-top: 0;
   /* Add margin above the grid */
 }
