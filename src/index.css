@@ -111,6 +111,22 @@ button:focus-visible {
 }
 
 /* KoЯnelius - Typography Styles */
+h1 {
+  --mantine-font-family-headings: 'Anton', sans-serif;
+  --mantine-h1-font-size: 3.4em;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: skewX(-5deg);
+  color: var(--function-color);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  border-bottom: 2px dashed var(--comment-color);
+  display: inline-block;
+  padding-right: 20px;
+  position: relative;
+  animation: textflicker 8s infinite alternate;
+}
 
 /* Typography with myspace/nu-metal style */
 h2 {
@@ -127,7 +143,6 @@ h2 {
   display: inline-block;
   padding-right: 20px;
   position: relative;
-  /* Create a cool blink effect */
   animation: textflicker 8s infinite alternate;
 }
 
