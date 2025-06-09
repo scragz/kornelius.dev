@@ -52,7 +52,11 @@
 
   --mantine-h1-font-size: 3rem;
 
-  @media (min-width: 62em) {
+
+}
+
+@media (min-width: 62em) {
+  .heroTitle {
     /* 992px */
     --mantine-h1-font-size: 5rem;
   }
@@ -60,9 +64,12 @@
 
 .heroLogoContainer::after {
   font-size: 3rem;
+}
 
-  @media (min-width: 62em) {
-    /* 992px */
+@media (min-width: 62em) {
+
+  /* 992px */
+  .heroLogoContainer::after {
     font-size: 5rem;
   }
 }
