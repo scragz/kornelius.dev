@@ -1,22 +1,44 @@
+/// <reference types="@cloudflare/workers-types" />
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
+
 interface Env {
-  ASSETS: {
-    fetch: (request: Request) => Promise<Response>;
-  };
+  __STATIC_CONTENT: KVNamespace;
+  __STATIC_CONTENT_MANIFEST: string;
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
-
-    // Check if the request is for a static asset
-    if (url.pathname.includes('.') && !url.pathname.endsWith('.html')) {
-      // This is likely a static asset (JS, CSS, images, etc.)
-      // Let Workers Assets handle it
-      return env.ASSETS.fetch(request);
+    
+    try {
+      // Try to get the asset from KV
+      return await getAssetFromKV(
+        {
+          request,
+          waitUntil: ctx.waitUntil.bind(ctx),
+        },
+        {
+          ASSET_NAMESPACE: env.__STATIC_CONTENT,
+          ASSET_MANIFEST: JSON.parse(env.__STATIC_CONTENT_MANIFEST),
+        }
+      );
+    } catch {
+      // If asset not found, serve index.html for SPA routing
+      try {
+        const indexRequest = new Request(`${url.protocol}//${url.host}/index.html`, request);
+        return await getAssetFromKV(
+          {
+            request: indexRequest,
+            waitUntil: ctx.waitUntil.bind(ctx),
+          },
+          {
+            ASSET_NAMESPACE: env.__STATIC_CONTENT,
+            ASSET_MANIFEST: JSON.parse(env.__STATIC_CONTENT_MANIFEST),
+          }
+        );
+      } catch {
+        return new Response('Not found', { status: 404 });
+      }
     }
-
-    // For all other requests (SPA routes), serve index.html
-    const indexRequest = new Request(new URL('/', request.url), request);
-    return env.ASSETS.fetch(indexRequest);
   },
 };
