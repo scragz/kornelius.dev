@@ -2,8 +2,8 @@ name = "kornelius-dev"
 compatibility_date = "2025-03-31"
 main = "src/worker.ts"
 
-[site]
-bucket = "./dist"
+[assets]
+directory = "./dist"
 
 [observability.logs]
 enabled = true
