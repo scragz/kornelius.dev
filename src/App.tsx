@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import PromptPage from './pages/PromptPage';
+import AuditPage from './pages/AuditPage';
+import CreatePage from './pages/CreatePage';
+import DebugPage from './pages/DebugPage';
 import Layout from './components/Layout';
 
 function App() {
@@ -10,6 +13,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route element={<Layout />}>
           <Route path="prompts/:id" element={<PromptPage />} />
+          <Route path="audit" element={<AuditPage />} />
+          <Route path="create" element={<CreatePage />} />
+          <Route path="debug" element={<DebugPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
