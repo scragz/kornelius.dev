@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ActionIcon, Code, Container, CopyButton, Loader, Title, Tooltip } from '@mantine/core';
 import { IconCopy, IconCheck } from '@tabler/icons-react';
-import Header from '../components/Header';
 import { prompts } from '../data/prompts';
 import classes from './PromptPage.module.css';
 
@@ -26,37 +25,34 @@ const PromptPage = () => {
   }, [prompt]);
 
   return (
-    <>
-      <Header />
-      <Container size="md" my="xl">
-        <Title order={1} className={classes.title}>{prompt ? prompt.title : 'Not Found'}</Title>
-        {loading ? (
-          <Loader />
-        ) : (
-          <div style={{ position: 'relative' }}>
-            <Code block className={classes.codeBlock}>{content}</Code>
-            <CopyButton value={content}>
-              {({ copied, copy }) => (
-                <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="left">
-                  <ActionIcon
-                    color={copied ? 'teal' : 'gray'}
-                    variant="subtle"
-                    onClick={copy}
-                    style={{
-                      position: 'absolute',
-                      top: '8px',
-                      right: '8px',
-                    }}
-                  >
-                    {copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
-                  </ActionIcon>
-                </Tooltip>
-              )}
-            </CopyButton>
-          </div>
-        )}
-      </Container>
-    </>
+    <Container size="md" my="xl">
+      <Title order={1} className={classes.title}>{prompt ? prompt.title : 'Not Found'}</Title>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div style={{ position: 'relative' }}>
+          <Code block className={classes.codeBlock}>{content}</Code>
+          <CopyButton value={content}>
+            {({ copied, copy }) => (
+              <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="left">
+                <ActionIcon
+                  color={copied ? 'teal' : 'gray'}
+                  variant="subtle"
+                  onClick={copy}
+                  style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                  }}
+                >
+                  {copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
+                </ActionIcon>
+              </Tooltip>
+            )}
+          </CopyButton>
+        </div>
+      )}
+    </Container>
   );
 };
 
