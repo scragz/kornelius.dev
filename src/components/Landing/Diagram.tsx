@@ -14,7 +14,7 @@ const Diagram: React.FC<DiagramProps> = ({ src, alt }) => {
         src={src}
         alt={alt}
         className={classes.diagramImage}
-        radius="sm" // Keep optional rounding
+        radius="sm"
       />
     </Box>
   );

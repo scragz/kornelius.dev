@@ -23,7 +23,7 @@
  */
 import React from 'react';
 import { Container, Title, Text, Button, Group } from '@mantine/core';
-import classes from './CTASection.module.css'; // Import CSS module
+import classes from './CTASection.module.css';
 
 const CTASection: React.FC = () => {
   return (

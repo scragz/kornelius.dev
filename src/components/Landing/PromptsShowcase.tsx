@@ -18,9 +18,9 @@
  */
 import React from 'react';
 import { Container, Title, SimpleGrid } from '@mantine/core';
-import GitHubPromptCard from './GitHubPromptCard';
+import GitHubPromptCard from '../GitHubPromptCard';
 import classes from './PromptsShowcase.module.css';
-import { prompts } from '../data/prompts';
+import { prompts } from '../../data/prompts';
 
 const createPrompts = prompts.filter(p => p.title.startsWith('Create:'));
 const debugPrompts = prompts.filter(p => p.title.startsWith('Debug:'));

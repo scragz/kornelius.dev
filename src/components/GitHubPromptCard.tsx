@@ -24,7 +24,7 @@ import React, { useState, useCallback } from 'react';
 import { Card, Text, Group, Tooltip, ActionIcon, Anchor } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { IconCopy, IconCheck, IconAlertCircle, IconLoader } from '@tabler/icons-react';
-import classes from './GitHubPromptCard.module.css'; // Import CSS module
+import classes from './GitHubPromptCard.module.css';
 
 interface GitHubPromptCardProps {
   id: string;
@@ -63,9 +63,9 @@ const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ id, title, rawUrl, 
       case 'loading':
         return <IconLoader size={16} style={{ animation: 'spin 1s linear infinite' }} />;
       case 'success':
-        return <IconCheck size={16} color="var(--mantine-color-teal-6)" />; // Use Mantine theme color variable
+        return <IconCheck size={16} color="var(--mantine-color-teal-6)" />;
       case 'error':
-        return <IconAlertCircle size={16} color="var(--mantine-color-red-6)" />; // Use Mantine theme color variable
+        return <IconAlertCircle size={16} color="var(--mantine-color-red-6)" />;
       case 'idle':
       default:
         return <IconCopy size={16} />;
@@ -101,7 +101,7 @@ const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ id, title, rawUrl, 
             disabled={copyState === 'loading' || copyState === 'success'}
             color={copyState === 'error' ? 'red' : 'gray'}
             aria-label={getTooltipLabel()}
-            className={classes.copyIcon} // Apply class from CSS module
+            className={classes.copyIcon}
           >
             {renderCopyIcon()}
           </ActionIcon>
@@ -109,14 +109,12 @@ const GitHubPromptCard: React.FC<GitHubPromptCardProps> = ({ id, title, rawUrl, 
       </Group>
 
       {description && (
-        <Text size="sm" mt="sm" className={classes.description}> {/* Apply class */}
+        <Text size="sm" mt="sm" className={classes.description}>
           {description}
         </Text>
       )}
     </Card>
   );
 };
-
-// Removed JS keyframe injection - ensure @keyframes spin is in global CSS (index.css)
 
 export default GitHubPromptCard;

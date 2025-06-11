@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ActionIcon, Code, Container, CopyButton, Loader, Title, Tooltip } from '@mantine/core';
 import { IconCopy, IconCheck } from '@tabler/icons-react';
-import PromptHeader from '../components/PromptHeader';
+import PromptHeader from '../components/Prompt/PromptHeader';
 import { prompts } from '../data/prompts';
 import classes from './PromptPage.module.css';
 

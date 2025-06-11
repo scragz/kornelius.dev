@@ -16,8 +16,8 @@
  */
 import React from 'react';
 import { Container, Title, Text, List, ThemeIcon } from '@mantine/core';
-import { IconHammer, IconCloudDownload } from '@tabler/icons-react'; // Example icons
-import classes from './OtherFeatures.module.css'; // Import CSS module
+import { IconHammer, IconCloudDownload } from '@tabler/icons-react';
+import classes from './OtherFeatures.module.css';
 
 const OtherFeatures: React.FC = () => {
   const otherFeatures = [
@@ -31,18 +31,17 @@ const OtherFeatures: React.FC = () => {
         Also Cool...
       </Title>
       <List
-        spacing="lg" /* Increase spacing */
-        size="md" /* Increase size */
+        spacing="lg"
+        size="md"
         center
         className={classes.featureList}
-        /* Remove default icon prop, handle in CSS if needed */
       >
         {otherFeatures.map((feature, index) => (
           <List.Item
             key={index}
             className={classes.featureItem}
             icon={
-              <ThemeIcon color="gray" size={30} radius="sm" className={classes.featureIcon}> {/* Style icon container */}
+              <ThemeIcon color="gray" size={30} radius="sm" className={classes.featureIcon}>
                 <feature.icon size="1.2rem" />
               </ThemeIcon>
             }
