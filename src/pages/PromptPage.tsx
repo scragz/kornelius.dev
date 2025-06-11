@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ActionIcon, Code, Container, CopyButton, Loader, Title, Tooltip } from '@mantine/core';
 import { IconCopy, IconCheck } from '@tabler/icons-react';
-import PromptHeader from '../components/Prompt/PromptHeader';
+import Header from '../components/Header';
 import { prompts } from '../data/prompts';
 import classes from './PromptPage.module.css';
 
@@ -27,7 +27,7 @@ const PromptPage = () => {
 
   return (
     <>
-      <PromptHeader />
+      <Header />
       <Container size="md" my="xl">
         <Title order={1} className={classes.title}>{prompt ? prompt.title : 'Not Found'}</Title>
         {loading ? (
