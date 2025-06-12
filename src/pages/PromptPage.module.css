@@ -3,18 +3,3 @@
   white-space: pre-wrap;
 }
 
-.breadcrumbs {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-}
-
-.breadcrumbLink {
-  color: var(--type-color, #79c0ff);
-  text-decoration: none;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
-}
-
-.breadcrumbLink:hover {
-  color: var(--keyword-color, #ff7b72);
-  text-shadow: 0 0 6px var(--keyword-color, #ff7b72);
-}
