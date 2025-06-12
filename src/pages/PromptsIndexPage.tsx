@@ -6,7 +6,7 @@ import classes from './ModePage.module.css';
 
 const PromptsIndexPage: React.FC = () => (
   <>
-    <PageBreadcrumbs items={[{ label: 'Home', to: '/#' }, { label: 'Prompts' }]} />
+    <PageBreadcrumbs items={[{ label: 'Home', to: '/#workflow-overview' }, { label: 'Prompts' }]} />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Prompts</Title>
