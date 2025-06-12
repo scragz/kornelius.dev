@@ -58,6 +58,11 @@
   animation: textflicker 8s infinite alternate;
 }
 
+.sectionTitle a {
+  font-size: inherit !important;
+  color: var(--function-color);
+}
+
 .subSectionTitle {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.6rem;

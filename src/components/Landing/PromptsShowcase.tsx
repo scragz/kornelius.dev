@@ -23,9 +23,9 @@ import classes from './PromptsShowcase.module.css';
 import { prompts } from '../../data/prompts';
 import { Link } from 'react-router-dom';
 
-const createPrompts = prompts.filter(p => p.title.startsWith('Create:'));
-const debugPrompts = prompts.filter(p => p.title.startsWith('Debug:'));
-const auditPrompts = prompts.filter(p => p.title.startsWith('Audit:'));
+const createPrompts = prompts.filter(p => p.category === 'Create');
+const debugPrompts = prompts.filter(p => p.category === 'Debug');
+const auditPrompts = prompts.filter(p => p.category === 'Audit');
 
 
 const PromptsShowcase: React.FC = () => {
