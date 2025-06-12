@@ -13,11 +13,11 @@ const CreatePage: React.FC = () => (
 
         <Title order={2} className={classes.linkHeading}>
           <Anchor component={Link} to="/prompts/create-request">
-            Idea Refinement
+            Request
           </Anchor>
         </Title>
         <Text>
-          Idea Refinement prompt acts as a collaborative brainstorming partner to help users flesh out raw project or feature concepts into well-structured, actionable requests. At its core, it solicits an initial PROJECT_REQUEST and then dynamically guides the conversation by asking targeted clarifying questions, surfacing missing user flows, and suggesting perspectives that the user might not have considered. It’s designed not to hand you a fully formed spec immediately, but to engage you in a dialogue, inviting you to co-create the scope, goals, and edge cases before moving forward.
+          The Idea Refinement prompt acts as a collaborative brainstorming partner to help users flesh out raw project or feature concepts into well-structured, actionable requests. At its core, it solicits an initial PROJECT_REQUEST and then dynamically guides the conversation by asking targeted clarifying questions, surfacing missing user flows, and suggesting perspectives that the user might not have considered. It’s designed not to hand you a fully formed spec immediately, but to engage you in a dialogue, inviting you to co-create the scope, goals, and edge cases before moving forward.
         </Text>
         <Text>
           A less obvious strength of this prompt is its built-in mechanism for surfacing “unknown unknowns.” By explicitly prompting the AI to suggest missing considerations or user flows, it mirrors an anthropological approach, drawing on experiential knowledge rather than just technical checklists. This helps prevent tunnel vision and encourages a plurality of viewpoints, including potential accessibility, cultural, or regulatory constraints that might otherwise go unnoticed.
@@ -25,7 +25,7 @@ const CreatePage: React.FC = () => (
 
         <Title order={2} className={classes.linkHeading}>
           <Anchor component={Link} to="/prompts/create-spec">
-            Technical Specification Generation
+            Spec
           </Anchor>
         </Title>
         <Text>
@@ -37,7 +37,7 @@ const CreatePage: React.FC = () => (
 
         <Title order={2} className={classes.linkHeading}>
           <Anchor component={Link} to="/prompts/create-planner">
-            Implementation Plan Generation
+            Plan
           </Anchor>
         </Title>
         <Text>
@@ -49,7 +49,7 @@ const CreatePage: React.FC = () => (
 
         <Title order={2} className={classes.linkHeading}>
           <Anchor component={Link} to="/prompts/create-codegen">
-            Code Generation
+            Codegen
           </Anchor>
         </Title>
         <Text>
@@ -61,7 +61,7 @@ const CreatePage: React.FC = () => (
 
         <Title order={2} className={classes.linkHeading}>
           <Anchor component={Link} to="/prompts/create-review">
-            Code Review
+            Review
           </Anchor>
         </Title>
         <Text>
