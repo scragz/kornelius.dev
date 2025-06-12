@@ -7,7 +7,7 @@ import classes from './ModePage.module.css';
 
 const AuditPage: React.FC = () => (
   <>
-    <BackHomeButton />
+    <BackHomeButton mode="Audit" />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Audit</Title>
