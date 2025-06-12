@@ -11,9 +11,6 @@ const Footer = () => (
       <Anchor component={Link} to="/prompts" className={classes.link}>
         Prompts
       </Anchor>
-      <Anchor component={Link} to="/privacy" className={classes.link}>
-        Privacy
-      </Anchor>
       <Anchor
         href="https://github.com/scragz/kornelius"
         target="_blank"
@@ -24,17 +21,27 @@ const Footer = () => (
       </Anchor>
     </Group>
     <div
-      className={classes.license}
-      {...{ 'xmlns:cc': 'http://creativecommons.org/ns#' }}
+      className={classes.legal}
     >
-      <a
-        href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1"
-        target="_blank"
-        rel="license noopener noreferrer"
-        style={{ display: 'inline-block' }}
-      >
-        public domain license (CC0 1.0)
-      </a>
+      <Group gap="xs" justify="center" className={classes.legalLinks}>
+        <Anchor component={Link} to="/privacy" className={classes.sublink}>
+          Privacy
+        </Anchor>
+        <Anchor component={Link} to="/accessibility" className={classes.sublink}>
+          Accessibility
+        </Anchor>
+      </Group>
+      <div className={classes.license}
+        {...{ 'xmlns:cc': 'http://creativecommons.org/ns#' }}>
+        <a
+          href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1"
+          target="_blank"
+          rel="license noopener noreferrer"
+          style={{ display: 'inline-block' }}
+        >
+          public domain license (CC0 1.0)
+        </a>
+      </div>
     </div>
   </footer>
 );

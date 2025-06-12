@@ -3,7 +3,7 @@
   padding: 2rem 1rem;
   border-top: 3px double var(--comment-color, #8b949e);
   text-align: center;
-  background: radial-gradient(circle at 50% 0, rgba(255,255,255,0.1), rgba(0,0,0,0.1)), var(--mantine-color-dark-7, #1e1e1e);
+  background: radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)), var(--mantine-color-dark-7, #1e1e1e);
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -28,7 +28,7 @@
   transform: rotate(-2deg);
 }
 
-.license {
+.legal {
   font-size: 0.75rem;
   font-family: 'VT323', monospace;
   opacity: 0.8;
