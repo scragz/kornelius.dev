@@ -1,12 +1,18 @@
 import React from 'react';
-import { Container, Stack, Title, Text } from '@mantine/core';
+import { Container, Stack, Title, Text, Anchor } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import classes from './ModePage.module.css';
 
 const AuditPage: React.FC = () => (
   <Container size="md" my="xl">
     <Stack gap="md">
       <Title order={1}>Audit</Title>
 
-      <Title order={2}>Accessibility Audit Guidance</Title>
+      <Title order={2} className={classes.linkHeading}>
+        <Anchor component={Link} to="/prompts/audit-a11y">
+          Accessibility Audit Guidance
+        </Anchor>
+      </Title>
       <Text>
         The Accessibility Audit Guidance prompt transforms a piece of UI—be it code snippets, design mockups, or live web pages—into a comprehensive audit report aligned with WCAG, Section 508, and ADA guidelines. At its core, you feed it your markup or screenshots along with context about your target users (e.g., people with low vision, motor impairments, cognitive differences), and it returns a prioritized list of issues (from high-severity barriers to optional “nice-to-haves”), complete with recommended code fixes, ARIA attributes, and design adjustments. Rather than just flagging failures, it often surfaces the why behind each issue, linking technical mistakes to real-world user frustrations—ensuring the feedback remains grounded in human experience.
       </Text>
@@ -14,7 +20,11 @@ const AuditPage: React.FC = () => (
         A less obvious strength lies in its intersectional lens: it doesn’t treat “accessibility” as a monolith but invites you to consider diverse modes of perception and interaction. For example, it may alert you that your color contrast is fine for most but still problematic for certain types of color blindness, or that keyboard-only navigation uncovers hidden focus traps affecting screen-reader users. It can even prompt you to run simple manual tests—like using voice controls or switching off styles—to verify automated findings, pushing beyond pure code analysis into participatory design territory. This dynamic, two-way auditing style helps teams co-create solutions with the very communities they intend to serve.
       </Text>
 
-      <Title order={2}>Security Hardening Blueprint</Title>
+      <Title order={2} className={classes.linkHeading}>
+        <Anchor component={Link} to="/prompts/audit-security">
+          Security Hardening Blueprint
+        </Anchor>
+      </Title>
       <Text>
         The Security Hardening Blueprint prompt serves as your AI-powered red team engineer. You present it with your application architecture, codebase excerpts, or deployment configuration, and it walks through a threat modeling exercise: identifying potential attack vectors (SQL injection, misconfigured CORS, insecure dependencies), recommending guardrails (parameterized queries, strict CSP, dependency pinning), and mapping out an incident response playbook. It also offers concrete CLI commands or code snippets for tools like OpenSSL, OWASP ZAP, or static analyzers, turning abstract security principles into actionable steps.
       </Text>
