@@ -11,7 +11,7 @@ export default {
     // For static assets (files with extensions like .js, .css, .png, etc), try to serve them directly
     const staticAssetExtensions = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.eot', '.json', '.xml', '.txt'];
     const hasStaticExtension = staticAssetExtensions.some(ext => url.pathname.endsWith(ext));
-    
+
     if (hasStaticExtension) {
       try {
         return await env.ASSETS.fetch(request);
@@ -31,7 +31,7 @@ export default {
         }
       );
       const response = await env.ASSETS.fetch(indexRequest);
-      
+
       // Make sure we return the response with proper headers for HTML
       return new Response(response.body, {
         status: response.status,
