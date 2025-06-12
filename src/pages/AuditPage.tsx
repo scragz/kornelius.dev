@@ -6,7 +6,7 @@ import classes from './ModePage.module.css';
 
 const AuditPage: React.FC = () => (
   <>
-    <PageBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Prompts', to: '/prompts' }, { label: 'Audit' }]} />
+    <PageBreadcrumbs items={[{ label: 'Home', to: '/#workflow-overview' }, { label: 'Prompts', to: '/prompts' }, { label: 'Audit' }]} />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Audit</Title>

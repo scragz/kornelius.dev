@@ -8,7 +8,7 @@ import ActionIcons from './ActionIcons';
 
 const PromptHeader = () => (
   <header className={classes.header}>
-    <Anchor component={Link} to="/" className={classes.logoLink}>
+    <Anchor component={Link} to="/#workflow-overview" className={classes.logoLink}>
       <div className={classNames(logoClasses.logoContainer, classes.logoContainer)}>
         <img src={logo} alt="Logo" className={classNames(logoClasses.barbedWire, classes.barbedWireSmall)} />
         <Text className={logoClasses.logoText}>KoЯnelius</Text>
