@@ -26,7 +26,7 @@ const PromptPage = () => {
 
   return (
     <Container size="md" my="xl">
-      <Title order={1} className={classes.title}>{prompt ? prompt.title : 'Not Found'}</Title>
+      <Title order={1}>{prompt ? prompt.title : 'Not Found'}</Title>
       {loading ? (
         <Loader />
       ) : (

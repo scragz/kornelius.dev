@@ -1,20 +1,3 @@
-.title {
-  --mantine-font-family-headings: 'Anton', sans-serif;
-  --mantine-h1-font-size: 3.4em;
-  font-weight: bold;
-  margin: 15px 0 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transform: skewX(-5deg);
-  color: var(--function-color);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-  border-bottom: 2px dashed var(--comment-color);
-  display: inline-block;
-  padding-right: 20px;
-  position: relative;
-  animation: textflicker 8s infinite alternate;
-}
-
 .codeBlock {
   font-size: 1rem;
   white-space: pre-wrap;

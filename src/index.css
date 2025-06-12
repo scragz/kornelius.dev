@@ -111,11 +111,9 @@ button:focus-visible {
 }
 
 /* KoЯnelius - Typography Styles */
-
-/* Typography with myspace/nu-metal style */
-h2 {
+h1:not(.landing-title) {
   --mantine-font-family-headings: 'Anton', sans-serif;
-  --mantine-h2-font-size: 3.4em;
+  --mantine-h1-font-size: 4.5em;
   font-weight: bold;
   margin: 15px 0 10px;
   text-transform: uppercase;
@@ -123,11 +121,23 @@ h2 {
   transform: skewX(-5deg);
   color: var(--function-color);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-  border-bottom: 2px dashed var(--comment-color);
+  border-bottom: 5px dashed var(--comment-color);
   display: inline-block;
   padding-right: 20px;
   position: relative;
   animation: textflicker 8s infinite alternate;
+}
+
+/* Typography with myspace/nu-metal style */
+h2 {
+  --mantine-font-family-headings: 'Permanent Marker', cursive;
+  --mantine-h2-font-size: 3.4em;
+  color: var(--string-color, #a5d6ff);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(0.5deg);
+  border-bottom: 1px dashed var(--comment-color, #8b949e);
+  display: inline-block;
+  padding-bottom: 3px;
 }
 
 h3 {

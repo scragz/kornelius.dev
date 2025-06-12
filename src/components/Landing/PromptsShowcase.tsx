@@ -21,6 +21,7 @@ import { Container, Title, SimpleGrid } from '@mantine/core';
 import GitHubPromptCard from '../GitHubPromptCard';
 import classes from './PromptsShowcase.module.css';
 import { prompts } from '../../data/prompts';
+import { Link } from 'react-router-dom';
 
 const createPrompts = prompts.filter(p => p.title.startsWith('Create:'));
 const debugPrompts = prompts.filter(p => p.title.startsWith('Debug:'));
@@ -34,7 +35,7 @@ const PromptsShowcase: React.FC = () => {
 
       {/* Create Mode Section */}
       <Title order={2} ta="center" mb="lg" className={classes.sectionTitle}>
-        Create Mode
+        <Link to="/create">Create Mode</Link>
       </Title>
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" mb="xl" className={classes.promptGrid}>
         {createPrompts.map((prompt) => (
@@ -49,9 +50,8 @@ const PromptsShowcase: React.FC = () => {
       </SimpleGrid>
 
       <Title order={2} ta="center" mb="lg" mt="xl" className={classes.sectionTitle}>
-        Debug Mode
+        <Link to="/debug">Debug Mode</Link>
       </Title>
-      {/* Removed Sub-title for prompts */}
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" mb="xl" className={classes.promptGrid}>
         {debugPrompts.map((prompt) => (
           <GitHubPromptCard
@@ -66,7 +66,7 @@ const PromptsShowcase: React.FC = () => {
 
       {/* Audit Mode Section */}
       <Title order={2} ta="center" mb="lg" mt="xl" className={classes.sectionTitle}>
-        Audit Mode
+        <Link to="/audit">Audit Mode</Link>
       </Title>
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="xl" className={classes.promptGrid}>
         {auditPrompts.map((prompt) => (

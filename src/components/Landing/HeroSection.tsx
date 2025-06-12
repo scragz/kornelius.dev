@@ -19,8 +19,8 @@ import React from 'react';
 import classNames from 'classnames';
 import { IconArrowDown } from '@tabler/icons-react';
 import classes from './HeroSection.module.css';
-import logoClasses from './Logo.module.css';
-import logo from '../assets/images/barbed-wire-color.svg';
+import logoClasses from '../Logo.module.css';
+import logo from '../../assets/images/barbed-wire-color.svg';
 
 const HeroSection: React.FC = () => {
 
@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
             />
 
             {/* Headline */}
-            <Title order={1} className={classNames(logoClasses.logoText, classes.heroTitle)}>
+            <Title order={1} className={classNames(logoClasses.logoText, classes.heroTitle, "landing-title")}>
               KoЯnelius
             </Title>
           </div>

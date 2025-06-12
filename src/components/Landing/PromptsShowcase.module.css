@@ -42,25 +42,24 @@
 
 
 .sectionTitle {
-  /* Inherit h2 styles from index.css but add more */
-  font-family: 'Metal Mania', cursive;
-  /* Use the nu-metal font */
-  font-size: 2.8rem;
-  /* Adjust size */
-  color: var(--keyword-color, #ff7b72);
-  /* Different color */
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
-  border-bottom: 3px solid var(--type-color, #79c0ff);
-  padding-bottom: 5px;
-  transform: rotate(-1deg) skewX(-4deg);
-  animation: none;
-  /* Override flicker animation if inherited */
+  --mantine-font-family-headings: 'Anton', sans-serif;
+  --mantine-h2-font-size: 3.4em;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: skewX(-5deg);
+  color: var(--function-color);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  border-bottom: 2px dashed var(--comment-color);
+  display: inline-block;
+  padding-right: 20px;
+  position: relative;
+  animation: textflicker 8s infinite alternate;
 }
 
 .subSectionTitle {
-  /* Style for titles like "Create Mode Prompts" */
   font-family: 'Permanent Marker', cursive;
-  /* Use a different font */
   font-size: 1.6rem;
   color: var(--string-color, #a5d6ff);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
@@ -68,7 +67,6 @@
   margin-bottom: 1.5rem !important;
   border-bottom: 1px dashed var(--comment-color, #8b949e);
   display: inline-block;
-  /* Allow border to fit content */
   padding-bottom: 3px;
 }
 
