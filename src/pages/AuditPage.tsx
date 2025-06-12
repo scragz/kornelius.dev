@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Stack, Title, Text, Anchor } from '@mantine/core';
-import BackHomeButton from '../components/BackHomeButton';
+import PageBreadcrumbs from '../components/PageBreadcrumbs';
 import ModeFooter from '../components/ModeFooter';
 import classes from './ModePage.module.css';
 
 const AuditPage: React.FC = () => (
   <>
-    <BackHomeButton mode="Audit" />
+    <PageBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Audit' }]} />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Audit</Title>
