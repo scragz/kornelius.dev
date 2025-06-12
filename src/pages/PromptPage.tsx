@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ActionIcon, Code, Container, CopyButton, Loader, Title, Tooltip } from '@mantine/core';
+import { ActionIcon, Code, Container, CopyButton, Loader, Title, Tooltip, Breadcrumbs, Anchor } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { IconCopy, IconCheck } from '@tabler/icons-react';
 import { prompts } from '../data/prompts';
 import classes from './PromptPage.module.css';
@@ -8,6 +9,7 @@ import classes from './PromptPage.module.css';
 const PromptPage = () => {
   const { id } = useParams<{ id: string }>();
   const prompt = prompts.find((p) => p.id === id);
+  const mode = id ? id.split('-')[0] : undefined;
 
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
@@ -26,6 +28,17 @@ const PromptPage = () => {
 
   return (
     <Container size="md" my="xl">
+      <Breadcrumbs mb="sm" className={classes.breadcrumbs}>
+        <Anchor component={Link} to="/" className={classes.breadcrumbLink}>
+          Home
+        </Anchor>
+        {prompt && mode && (
+          <Anchor component={Link} to={`/${mode}`} className={classes.breadcrumbLink}>
+            {mode.charAt(0).toUpperCase() + mode.slice(1)}
+          </Anchor>
+        )}
+        <span>{prompt ? prompt.title : 'Not Found'}</span>
+      </Breadcrumbs>
       <Title order={1}>{prompt ? prompt.title : 'Not Found'}</Title>
       {loading ? (
         <Loader />
