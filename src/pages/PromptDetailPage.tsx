@@ -4,7 +4,7 @@ import { ActionIcon, Code, Container, CopyButton, Loader, Title, Tooltip } from 
 import { IconCopy, IconCheck } from '@tabler/icons-react';
 import { prompts } from '../data/prompts';
 import PageBreadcrumbs from '../components/PageBreadcrumbs';
-import classes from './PromptPage.module.css';
+import classes from './PromptDetailPage.module.css';
 
 const PromptPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,31 +39,31 @@ const PromptPage = () => {
       />
       <Container size="md" my="xl">
         <Title order={1}>{prompt ? prompt.title : 'Not Found'}</Title>
-      {loading ? (
-        <Loader />
-      ) : (
-        <div style={{ position: 'relative' }}>
-          <Code block className={classes.codeBlock}>{content}</Code>
-          <CopyButton value={content}>
-            {({ copied, copy }) => (
-              <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="left">
-                <ActionIcon
-                  color={copied ? 'teal' : 'gray'}
-                  variant="subtle"
-                  onClick={copy}
-                  style={{
-                    position: 'absolute',
-                    top: '8px',
-                    right: '8px',
-                  }}
-                >
-                  {copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
-                </ActionIcon>
-              </Tooltip>
-            )}
-          </CopyButton>
-        </div>
-      )}
+        {loading ? (
+          <Loader />
+        ) : (
+          <div style={{ position: 'relative' }}>
+            <Code block className={classes.codeBlock}>{content}</Code>
+            <CopyButton value={content}>
+              {({ copied, copy }) => (
+                <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="left">
+                  <ActionIcon
+                    color={copied ? 'teal' : 'gray'}
+                    variant="subtle"
+                    onClick={copy}
+                    style={{
+                      position: 'absolute',
+                      top: '8px',
+                      right: '8px',
+                    }}
+                  >
+                    {copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
+                  </ActionIcon>
+                </Tooltip>
+              )}
+            </CopyButton>
+          </div>
+        )}
       </Container>
     </>
   );
