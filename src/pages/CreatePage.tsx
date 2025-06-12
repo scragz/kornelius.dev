@@ -7,7 +7,7 @@ import classes from './ModePage.module.css';
 
 const CreatePage: React.FC = () => (
   <>
-    <BackHomeButton />
+    <BackHomeButton mode="Create" />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Create</Title>

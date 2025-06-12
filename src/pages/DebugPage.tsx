@@ -7,7 +7,7 @@ import classes from './ModePage.module.css';
 
 const DebugPage: React.FC = () => (
   <>
-    <BackHomeButton />
+    <BackHomeButton mode="Debug" />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Debug</Title>
