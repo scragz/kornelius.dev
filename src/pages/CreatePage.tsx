@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container, Stack, Title, Text } from '@mantine/core';
+import BackHomeButton from '../components/BackHomeButton';
+import ModeFooter from '../components/ModeFooter';
 
 const CreatePage: React.FC = () => (
-  <Container size="md" my="xl">
-    <Stack gap="md">
-      <Title order={1}>Create</Title>
+  <>
+    <BackHomeButton />
+    <Container size="md" my="xl">
+      <Stack gap="md">
+        <Title order={1}>Create</Title>
 
       <Title order={2}>Idea Refinement</Title>
       <Text>
@@ -37,8 +41,10 @@ const CreatePage: React.FC = () => (
       <Text>
         A subtle but powerful aspect is its insistence on complete file contents and adherence to strict documentation conventions. This prevents half-baked code snippets and encourages consistent styling. It’s effectively a single-step code generator, reducing merge conflicts and making incremental reviews easier—much like a developer pair-programming one function at a time.
       </Text>
-    </Stack>
-  </Container>
+      </Stack>
+    </Container>
+    <ModeFooter />
+  </>
 );
 
 export default CreatePage;

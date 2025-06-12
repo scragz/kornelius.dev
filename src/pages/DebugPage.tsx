@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container, Stack, Title, Text } from '@mantine/core';
+import BackHomeButton from '../components/BackHomeButton';
+import ModeFooter from '../components/ModeFooter';
 
 const DebugPage: React.FC = () => (
-  <Container size="md" my="xl">
-    <Stack gap="md">
-      <Title order={1}>Debug</Title>
+  <>
+    <BackHomeButton />
+    <Container size="md" my="xl">
+      <Stack gap="md">
+        <Title order={1}>Debug</Title>
 
       <Title order={2}>Observe</Title>
       <Text>
@@ -37,8 +41,10 @@ const DebugPage: React.FC = () => (
       <Text>
         A key nuance is its dual focus on execution and verification. It reminds the user not only how to apply the change but how to measure success, closing the OODA loop and laying the groundwork for continuous improvement. This integration of action with validation embodies a cybernetic feedback loop, ensuring that each intervention is both deliberate and observable.
       </Text>
-    </Stack>
-  </Container>
+      </Stack>
+    </Container>
+    <ModeFooter />
+  </>
 );
 
 export default DebugPage;
