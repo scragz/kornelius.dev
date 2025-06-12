@@ -36,18 +36,20 @@ const PromptsIndexPage: React.FC = () => (
         </Text>
 
         <Title order={2} className={classes.linkHeading}>
-          <Anchor component={Link} to="/audit-a11y">
-            Accessibility Audit Guidance
+          <Anchor component={Link} to="/audit">
+            Audit
           </Anchor>
+        </Title>
+
+        <Title order={3}>
+          Accessibility Audit Guidance
         </Title>
         <Text>
           Accessibility is not optional, it's integral to inclusive design. This prompt audits UI against WCAG and ADA standards, highlighting barriers and guiding remedial actions grounded in real user contexts, from vision impairments to motor differences.
         </Text>
 
-        <Title order={2} className={classes.linkHeading}>
-          <Anchor component={Link} to="/prompts/audit-security">
-            Security Hardening Blueprint
-          </Anchor>
+        <Title order={3}>
+          Security Hardening Blueprint
         </Title>
         <Text>
           Security underpins trust and resilience. This blueprint prompt conducts threat modeling tailored for modern applications, surfacing both classic and AI-specific vulnerabilities. It prioritizes mitigations by impact and feasibility, fostering a proactive, dialogic security culture.

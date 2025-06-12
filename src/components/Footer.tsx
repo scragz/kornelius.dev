@@ -8,6 +8,9 @@ const Footer = () => (
       <Anchor component={Link} to="/" className={classes.link}>
         Home
       </Anchor>
+      <Anchor component={Link} to="/prompts" className={classes.link}>
+        Prompts
+      </Anchor>
       <Anchor component={Link} to="/privacy" className={classes.link}>
         Privacy
       </Anchor>

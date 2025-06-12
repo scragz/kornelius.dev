@@ -146,31 +146,13 @@ h2 a {
 
 h3 {
   --mantine-font-family-headings: 'Permanent Marker', cursive;
-  --mantine-h3-font-size: 3em;
+  --mantine-h3-font-size: 2.5em;
   margin: 10px 0;
   transform: rotate(-1.5deg);
   color: var(--keyword-color);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
   padding-left: 5px;
   position: relative;
-}
-
-h3::before {
-  content: "✧";
-  position: absolute;
-  left: -10px;
-  top: 0;
-  color: var(--type-color);
-  font-size: 0.9em;
-}
-
-h3::after {
-  content: "✧";
-  position: absolute;
-  right: -10px;
-  top: 0;
-  color: var(--type-color);
-  font-size: 0.9em;
 }
 
 h4 {

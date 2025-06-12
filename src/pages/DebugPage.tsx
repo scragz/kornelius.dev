@@ -6,7 +6,7 @@ import classes from './ModePage.module.css';
 
 const DebugPage: React.FC = () => (
   <>
-    <PageBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Debug' }]} />
+    <PageBreadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Prompts', to: '/prompts' }, { label: 'Debug' }]} />
     <Container size="md" my="xl">
       <Stack gap="md">
         <Title order={1}>Debug</Title>

@@ -31,6 +31,7 @@ const PromptPage = () => {
       <PageBreadcrumbs
         items={[
           { label: 'Home', to: '/' },
+          { label: 'Prompts', to: '/prompts' },
           ...(prompt && mode
             ? [{ label: mode.charAt(0).toUpperCase() + mode.slice(1), to: `/${mode}` }]
             : []),
