@@ -4,6 +4,7 @@ import PromptPage from './pages/PromptPage';
 import AuditPage from './pages/AuditPage';
 import CreatePage from './pages/CreatePage';
 import DebugPage from './pages/DebugPage';
+import PrivacyPage from './pages/PrivacyPage';
 import Layout from './components/Layout';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="audit" element={<AuditPage />} />
           <Route path="create" element={<CreatePage />} />
           <Route path="debug" element={<DebugPage />} />
+          <Route path="privacy" element={<PrivacyPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
